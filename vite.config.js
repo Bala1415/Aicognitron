@@ -16,7 +16,11 @@ export default defineConfig({
       output: {
         manualChunks: undefined,
       }
-    }
+    },
+    target: 'es2015'
   },
-  base: '/'
+  base: '/',
+  esbuild: {
+    target: 'es2015'
+  }
 })
