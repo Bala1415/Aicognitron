@@ -7,38 +7,35 @@ function Team() {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Johnson",
-      position: "President",
+      name: "Kavirajan E",
+      position: "Coordinator",
       department: "AI & Data Science",
       image: "🤖",
-      description: "Leading AI research initiatives and club strategic planning",
-      skills: ["Leadership", "AI Research", "Strategy"],
-      projects: ["Neural Network Optimization", "Club Growth Initiative"],
-      social: { github: "alexj", linkedin: "alex-johnson" },
+      description: "",
+      skills: [],
+      projects: [],
       level: "senior"
     },
     {
       id: 2,
-      name: "Sarah Chen",
-      position: "Vice President",
+      name: "Balavignesh A U",
+      position: "Coordinator",
       department: "AI & Data Science",
       image: "👩‍💼",
-      description: "Coordinating events and managing member relations",
-      skills: ["Event Management", "Communication", "Team Building"],
-      projects: ["Hackathon 2024", "Member Mentorship Program"],
-      social: { github: "sarahc", linkedin: "sarah-chen" },
+      description: "",
+      skills: [],
+      projects: [],
       level: "senior"
     },
     {
       id: 3,
-      name: "Michael Rodriguez",
-      position: "Technical Lead",
+      name: "Subhashree",
+      position: "Coordinator",
       department: "AI & Data Science",
       image: "👨‍💻",
-      description: "Overseeing technical projects and workshops",
-      skills: ["Machine Learning", "Python", "TensorFlow"],
-      projects: ["Computer Vision Workshop", "ML Pipeline Development"],
-      social: { github: "mikerm", linkedin: "michael-rodriguez" },
+      description: "",
+      skills: [],
+      projects: [],
       level: "senior"
     },
     {
@@ -50,7 +47,6 @@ function Team() {
       description: "Managing documentation and communication",
       skills: ["Documentation", "Communication", "Project Management"],
       projects: ["Club Documentation System", "Newsletter Program"],
-      social: { github: "emilyd", linkedin: "emily-davis" },
       level: "junior"
     },
     {
@@ -62,7 +58,6 @@ function Team() {
       description: "Organizing hackathons and technical competitions",
       skills: ["Event Planning", "Logistics", "Partnerships"],
       projects: ["AI Hackathon Series", "Industry Partnerships"],
-      social: { github: "davidk", linkedin: "david-kim" },
       level: "junior"
     },
     {
@@ -74,7 +69,6 @@ function Team() {
       description: "Managing club finances and sponsorships",
       skills: ["Finance", "Budgeting", "Sponsorship"],
       projects: ["Budget Management System", "Sponsorship Program"],
-      social: { github: "lisaw", linkedin: "lisa-wang" },
       level: "junior"
     }
   ];
@@ -84,21 +78,27 @@ function Team() {
   );
 
   return (
-    <section style={{ 
-      minHeight: 'calc(100vh - 120px)', 
-      display: 'flex', 
-      flexDirection: 'column', 
-      alignItems: 'center', 
-      justifyContent: 'flex-start', 
-      textAlign: 'center', 
+    <section style={{
+      minHeight: '100vh',
+      width: '100vw',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      textAlign: 'center',
       zIndex: 2,
-      padding: '2rem',
-      paddingTop: '4rem'
+      padding: '2vw',
+      boxSizing: 'border-box',
+      paddingTop: '6vw',
+      overflowX: 'hidden',
+      background: 'none',
     }}>
       <div style={{
-        maxWidth: '1400px',
+        maxWidth: '1600px',
         margin: '0 auto',
-        width: '100%'
+        width: '100%',
+        boxSizing: 'border-box',
+        padding: '0 1vw',
       }}>
         {/* Animated header */}
         <div style={{ marginBottom: '3rem' }}>
@@ -149,9 +149,11 @@ function Team() {
         {/* Team grid */}
         <div style={{
           display: 'grid',
-          gap: '2rem',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          marginBottom: '3rem'
+          gap: '2vw',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          marginBottom: '3rem',
+          width: '100%',
+          boxSizing: 'border-box',
         }}>
           {filteredMembers.map((member, index) => (
             <EnhancedMemberCard
@@ -251,25 +253,29 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       style={{
-        background: isSelected 
+        background: isSelected
           ? 'linear-gradient(135deg, rgba(126, 214, 223, 0.2) 0%, rgba(112, 161, 255, 0.2) 100%)'
-          : isHovered 
-            ? 'rgba(255,255,255,0.12)' 
+          : isHovered
+            ? 'rgba(255,255,255,0.12)'
             : 'rgba(255,255,255,0.08)',
-        borderRadius: '25px',
-        padding: '2.5rem',
+        borderRadius: '2vw',
+        padding: '2vw',
         border: `2px solid ${isSelected ? '#7ed6df' : 'rgba(126, 214, 223, 0.2)'}`,
         transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
         cursor: 'pointer',
         position: 'relative',
         overflow: 'hidden',
-        transform: isHovered ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
-        boxShadow: isHovered 
-          ? '0 25px 50px rgba(126, 214, 223, 0.3)' 
-          : '0 8px 32px rgba(0, 0, 0, 0.2)',
-        animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
+        transform: isHovered ? 'translateY(-1vw) scale(1.02)' : 'translateY(0) scale(1)',
+        boxShadow: isHovered
+          ? '0 2vw 4vw rgba(126, 214, 223, 0.3)'
+          : '0 0.5vw 2vw rgba(0, 0, 0, 0.2)',
+        animation: `slideUp 0.6s ease-out ${index * 0.1}s both`,
+        minWidth: 0,
+        width: '100%',
+        maxWidth: '100%',
+        boxSizing: 'border-box',
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -297,49 +303,55 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
       )}
 
       <div style={{
-        fontSize: '5rem',
-        marginBottom: '1.5rem',
-        animation: isHovered ? 'pulse 2s ease-in-out infinite' : 'none'
+        fontSize: 'clamp(2.5rem, 8vw, 5rem)',
+        marginBottom: '2vw',
+        animation: isHovered ? 'pulse 2s ease-in-out infinite' : 'none',
+        width: '100%',
+        textAlign: 'center',
       }}>
         {member.image}
       </div>
       
       <h3 style={{
-        fontSize: '1.6rem',
+        fontSize: 'clamp(1.2rem, 3vw, 2rem)',
         fontWeight: 'bold',
         color: '#7ed6df',
-        marginBottom: '0.5rem'
+        marginBottom: '0.5vw',
+        wordBreak: 'break-word',
       }}>
         {member.name}
       </h3>
       
       <div style={{
-        fontSize: '1.2rem',
+        fontSize: 'clamp(1rem, 2vw, 1.3rem)',
         fontWeight: '600',
         background: 'linear-gradient(45deg, #70a1ff, #7ed6df)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
-        marginBottom: '0.5rem'
+        marginBottom: '0.5vw',
+        wordBreak: 'break-word',
       }}>
         {member.position}
       </div>
       
       <div style={{
-        fontSize: '0.9rem',
+        fontSize: 'clamp(0.8rem, 1.5vw, 1rem)',
         color: '#b2bec3',
-        marginBottom: '1rem',
-        fontStyle: 'italic'
+        marginBottom: '1vw',
+        fontStyle: 'italic',
+        wordBreak: 'break-word',
       }}>
         {member.department}
       </div>
       
       <p style={{
         color: '#dff9fb',
-        fontSize: '1rem',
+        fontSize: 'clamp(0.9rem, 1.8vw, 1.1rem)',
         lineHeight: '1.5',
         textAlign: 'left',
-        marginBottom: '1.5rem'
+        marginBottom: '1.5vw',
+        wordBreak: 'break-word',
       }}>
         {member.description}
       </p>
@@ -348,32 +360,24 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '0.5rem',
-        marginBottom: '1rem'
+        gap: '0.5vw',
+        marginBottom: '1vw',
+        width: '100%',
+        boxSizing: 'border-box',
       }}>
         {member.skills.slice(0, 3).map(skill => (
           <span key={skill} style={{
             background: 'rgba(126, 214, 223, 0.2)',
             color: '#7ed6df',
-            padding: '0.3rem 0.8rem',
-            borderRadius: '15px',
-            fontSize: '0.8rem',
-            fontWeight: '500'
+            padding: '0.3vw 0.8vw',
+            borderRadius: '1vw',
+            fontSize: 'clamp(0.7rem, 1vw, 0.9rem)',
+            fontWeight: '500',
+            wordBreak: 'break-word',
           }}>
             {skill}
           </span>
         ))}
-      </div>
-
-      {/* Click indicator */}
-      <div style={{
-        fontSize: '0.9rem',
-        color: '#70a1ff',
-        fontWeight: 'bold',
-        opacity: isHovered ? 1 : 0.7,
-        transition: 'opacity 0.3s ease'
-      }}>
-        Click to view details →
       </div>
     </div>
   );
