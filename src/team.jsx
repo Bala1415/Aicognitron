@@ -2,103 +2,140 @@ import React, { useState } from 'react';
 
 function Team() {
   const [selectedMember, setSelectedMember] = useState(null);
-  const [filter, setFilter] = useState('all');
 
   const teamMembers = [
+    // Level 1
     {
       id: 1,
-      name: "Kavirajan E",
-      position: "Coordinator",
+      name: "Muthusenthil",
+      position: "Head of the Department",
       department: "AI & Data Science",
-      image: "🤖",
-      description: "",
-      skills: [],
-      projects: [],
-      level: "senior"
+      image: "👨‍🏫",
+      description: "Guiding the department and club with vision and leadership.",
+      skills: ["Leadership", "Academics", "Mentorship"],
+      projects: ["Department Strategy", "Faculty Development"],
+      social: {},
+      level: "level1"
     },
     {
       id: 2,
-      name: "Balavignesh A U",
-      position: "Coordinator",
+      name: "Abinaya",
+      position: "Staff",
       department: "AI & Data Science",
-      image: "👩‍💼",
-      description: "",
-      skills: [],
-      projects: [],
-      level: "senior"
+      image: "👩‍🏫",
+      description: "Supporting club activities and student development.",
+      skills: ["Teaching", "Support", "Mentorship"],
+      projects: ["Student Guidance"],
+      social: {},
+      level: "level1"
     },
     {
       id: 3,
-      name: "Subhashree",
-      position: "Coordinator",
+      name: "Sherlin Sherly",
+      position: "Staff",
       department: "AI & Data Science",
-      image: "👨‍💻",
-      description: "",
-      skills: [],
-      projects: [],
-      level: "senior"
+      image: "👩‍🏫",
+      description: "Facilitating club events and academic excellence.",
+      skills: ["Teaching", "Event Support"],
+      projects: ["Event Facilitation"],
+      social: {},
+      level: "level1"
     },
+    // Level 2
     {
       id: 4,
-      name: "Emily Davis",
-      position: "Secretary",
+      name: "Pavithran",
+      position: "Technical Program Manager",
       department: "AI & Data Science",
-      image: "👩‍💻",
-      description: "Managing documentation and communication",
-      skills: ["Documentation", "Communication", "Project Management"],
-      projects: ["Club Documentation System", "Newsletter Program"],
-      level: "junior"
+      image: "🧑‍💼",
+      description: "Managing technical programs and club operations.",
+      skills: ["Program Management", "Operations", "Technical Leadership"],
+      projects: ["Tech Program Coordination"],
+      social: {},
+      level: "level2"
     },
     {
       id: 5,
-      name: "David Kim",
-      position: "Event Coordinator",
+      name: "Aakash",
+      position: "Technical Head",
       department: "AI & Data Science",
-      image: "👨‍🎓",
-      description: "Organizing hackathons and technical competitions",
-      skills: ["Event Planning", "Logistics", "Partnerships"],
-      projects: ["AI Hackathon Series", "Industry Partnerships"],
-      level: "junior"
+      image: "🧑‍💻",
+      description: "Leading technical teams and innovation initiatives.",
+      skills: ["Technical Leadership", "Innovation", "Team Management"],
+      projects: ["Innovation Drive"],
+      social: {},
+      level: "level2"
     },
     {
       id: 6,
-      name: "Lisa Wang",
-      position: "Treasurer",
+      name: "Sethu",
+      position: "Chief Technical Officer",
       department: "AI & Data Science",
-      image: "👩‍🎓",
-      description: "Managing club finances and sponsorships",
-      skills: ["Finance", "Budgeting", "Sponsorship"],
-      projects: ["Budget Management System", "Sponsorship Program"],
-      level: "junior"
+      image: "🧑‍🔬",
+      description: "Overseeing technical strategy and club technology vision.",
+      skills: ["Strategy", "Technology Vision", "Leadership"],
+      projects: ["Tech Strategy"],
+      social: {},
+      level: "level2"
+    },
+    // Level 3
+    {
+      id: 7,
+      name: "Kavirajan",
+      position: "Tech Innovate Lead",
+      department: "AI & Data Science",
+      image: "🧑‍�",
+      description: "Driving innovation and new technology initiatives.",
+      skills: ["Innovation", "Tech Leadership"],
+      projects: ["Innovate Projects"],
+      social: {},
+      level: "level3"
+    },
+    {
+      id: 8,
+      name: "Balavignesh",
+      position: "Platform Developer",
+      department: "AI & Data Science",
+      image: "👨‍💻",
+      description: "Developing and maintaining club platforms and tools.",
+      skills: ["Development", "Platform Engineering"],
+      projects: ["Platform Development"],
+      social: {},
+      level: "level3"
+    },
+    {
+      id: 9,
+      name: "Subha",
+      position: "Tech Content Curator",
+      department: "AI & Data Science",
+      image: "👩‍💻",
+      description: "Curating technical content and resources for the club.",
+      skills: ["Content Creation", "Technical Writing"],
+      projects: ["Content Curation"],
+      social: {},
+      level: "level3"
     }
   ];
 
-  const filteredMembers = teamMembers.filter(member => 
-    filter === 'all' || member.level === filter
-  );
+  // Show all members, no filtering
+  const filteredMembers = teamMembers;
 
   return (
-    <section style={{
-      minHeight: '100vh',
-      width: '100vw',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      textAlign: 'center',
+    <section style={{ 
+      minHeight: 'calc(100vh - 120px)', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'flex-start', 
+      textAlign: 'center', 
       zIndex: 2,
-      padding: '2vw',
-      boxSizing: 'border-box',
-      paddingTop: '6vw',
-      overflowX: 'hidden',
-      background: 'none',
+      padding: '2rem',
+      paddingTop: '4rem'
     }}>
       <div style={{
-        maxWidth: '1600px',
+        maxWidth: '1400px',
         margin: '0 auto',
-        width: '100%',
-        boxSizing: 'border-box',
-        padding: '0 1vw',
+        width: '100%'
       }}>
         {/* Animated header */}
         <div style={{ marginBottom: '3rem' }}>
@@ -126,34 +163,15 @@ function Team() {
             The brilliant minds driving innovation and building the future of AI
           </p>
 
-          {/* Filter buttons */}
-          <div style={{
-            display: 'flex',
-            gap: '1rem',
-            justifyContent: 'center',
-            marginBottom: '2rem',
-            flexWrap: 'wrap'
-          }}>
-            {['all', 'senior', 'junior'].map(filterType => (
-              <FilterButton
-                key={filterType}
-                active={filter === filterType}
-                onClick={() => setFilter(filterType)}
-                label={filterType === 'all' ? 'All Members' : 
-                       filterType === 'senior' ? 'Leadership' : 'Core Members'}
-              />
-            ))}
-          </div>
+      {/* No filter buttons, all members shown below */}
         </div>
         
         {/* Team grid */}
         <div style={{
           display: 'grid',
-          gap: '2vw',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          marginBottom: '3rem',
-          width: '100%',
-          boxSizing: 'border-box',
+          gap: '2rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          marginBottom: '3rem'
         }}>
           {filteredMembers.map((member, index) => (
             <EnhancedMemberCard
@@ -253,29 +271,25 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <div 
       style={{
-        background: isSelected
+        background: isSelected 
           ? 'linear-gradient(135deg, rgba(126, 214, 223, 0.2) 0%, rgba(112, 161, 255, 0.2) 100%)'
-          : isHovered
-            ? 'rgba(255,255,255,0.12)'
+          : isHovered 
+            ? 'rgba(255,255,255,0.12)' 
             : 'rgba(255,255,255,0.08)',
-        borderRadius: '2vw',
-        padding: '2vw',
+        borderRadius: '25px',
+        padding: '2.5rem',
         border: `2px solid ${isSelected ? '#7ed6df' : 'rgba(126, 214, 223, 0.2)'}`,
         transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
         cursor: 'pointer',
         position: 'relative',
         overflow: 'hidden',
-        transform: isHovered ? 'translateY(-1vw) scale(1.02)' : 'translateY(0) scale(1)',
-        boxShadow: isHovered
-          ? '0 2vw 4vw rgba(126, 214, 223, 0.3)'
-          : '0 0.5vw 2vw rgba(0, 0, 0, 0.2)',
-        animation: `slideUp 0.6s ease-out ${index * 0.1}s both`,
-        minWidth: 0,
-        width: '100%',
-        maxWidth: '100%',
-        boxSizing: 'border-box',
+        transform: isHovered ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
+        boxShadow: isHovered 
+          ? '0 25px 50px rgba(126, 214, 223, 0.3)' 
+          : '0 8px 32px rgba(0, 0, 0, 0.2)',
+        animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -303,55 +317,49 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
       )}
 
       <div style={{
-        fontSize: 'clamp(2.5rem, 8vw, 5rem)',
-        marginBottom: '2vw',
-        animation: isHovered ? 'pulse 2s ease-in-out infinite' : 'none',
-        width: '100%',
-        textAlign: 'center',
+        fontSize: '5rem',
+        marginBottom: '1.5rem',
+        animation: isHovered ? 'pulse 2s ease-in-out infinite' : 'none'
       }}>
         {member.image}
       </div>
       
       <h3 style={{
-        fontSize: 'clamp(1.2rem, 3vw, 2rem)',
+        fontSize: '1.6rem',
         fontWeight: 'bold',
         color: '#7ed6df',
-        marginBottom: '0.5vw',
-        wordBreak: 'break-word',
+        marginBottom: '0.5rem'
       }}>
         {member.name}
       </h3>
       
       <div style={{
-        fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+        fontSize: '1.2rem',
         fontWeight: '600',
         background: 'linear-gradient(45deg, #70a1ff, #7ed6df)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
-        marginBottom: '0.5vw',
-        wordBreak: 'break-word',
+        marginBottom: '0.5rem'
       }}>
         {member.position}
       </div>
       
       <div style={{
-        fontSize: 'clamp(0.8rem, 1.5vw, 1rem)',
+        fontSize: '0.9rem',
         color: '#b2bec3',
-        marginBottom: '1vw',
-        fontStyle: 'italic',
-        wordBreak: 'break-word',
+        marginBottom: '1rem',
+        fontStyle: 'italic'
       }}>
         {member.department}
       </div>
       
       <p style={{
         color: '#dff9fb',
-        fontSize: 'clamp(0.9rem, 1.8vw, 1.1rem)',
+        fontSize: '1rem',
         lineHeight: '1.5',
         textAlign: 'left',
-        marginBottom: '1.5vw',
-        wordBreak: 'break-word',
+        marginBottom: '1.5rem'
       }}>
         {member.description}
       </p>
@@ -360,24 +368,32 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '0.5vw',
-        marginBottom: '1vw',
-        width: '100%',
-        boxSizing: 'border-box',
+        gap: '0.5rem',
+        marginBottom: '1rem'
       }}>
         {member.skills.slice(0, 3).map(skill => (
           <span key={skill} style={{
             background: 'rgba(126, 214, 223, 0.2)',
             color: '#7ed6df',
-            padding: '0.3vw 0.8vw',
-            borderRadius: '1vw',
-            fontSize: 'clamp(0.7rem, 1vw, 0.9rem)',
-            fontWeight: '500',
-            wordBreak: 'break-word',
+            padding: '0.3rem 0.8rem',
+            borderRadius: '15px',
+            fontSize: '0.8rem',
+            fontWeight: '500'
           }}>
             {skill}
           </span>
         ))}
+      </div>
+
+      {/* Click indicator */}
+      <div style={{
+        fontSize: '0.9rem',
+        color: '#70a1ff',
+        fontWeight: 'bold',
+        opacity: isHovered ? 1 : 0.7,
+        transition: 'opacity 0.3s ease'
+      }}>
+        Click to view details →
       </div>
     </div>
   );

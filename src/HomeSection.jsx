@@ -315,64 +315,6 @@ function StatCounter({ label, value, color }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-```
-// Modern animated counter component
-// function StatCounter({ label, value, color }) {
-//   const [count, setCount] = useState(0);
-
-//   useEffect(() => {
-//     const timer = setInterval(() => {
-//       setCount(prev => {
-//         if (prev < value) {
-//           return prev + Math.ceil((value - prev) / 10);
-//         }
-//         return value;
-//       });
-//     }, 100);
-
-//     return () => clearInterval(timer);
-//   }, [value]);
-
-//   return (
-//     <div style={{
-//       textAlign: 'center',
-//       padding: '1.5rem',
-//       background: 'rgba(15, 15, 25, 0.9)',
-//       borderRadius: '15px',
-//       border: `1px solid ${color}`,
-//       minWidth: '140px',
-//       boxShadow: `0 0 15px ${color}30, inset 0 0 15px rgba(255,255,255,0.05)`,
-//       animation: 'modernGlow 3s ease-in-out infinite',
-//       position: 'relative',
-//       overflow: 'hidden',
-//       backdropFilter: 'blur(10px)'
-//     }}>
-//       {/* Subtle scanning line */}
-//       <div style={{
-//         position: 'absolute',
-//         top: 0,
-//         left: '-100%',
-//         width: '100%',
-//         height: '1px',
-//         background: `linear-gradient(90deg, transparent, ${color}, transparent)`,
-//         animation: 'gentleFlow 3s linear infinite'
-//       }} />
-      
-//       <div style={{
-//         fontSize: '2.8rem',
-//         fontWeight: 'bold',
-//         color: color,
-//         fontFamily: 'system-ui, -apple-system, sans-serif',
-//         textShadow: `0 0 10px ${color}80`,
-//         marginBottom: '0.5rem'
-//       }}>
-//         {count}+
-//       </div>
-//       <div style={{
-//         fontSize: '0.9rem',
-//         color: '#e5e7eb',
-  useEffect(() => {
-    const timer = setInterval(() => {
       setCount(prev => {
         if (prev < value) {
           return prev + Math.ceil((value - prev) / 10);
@@ -407,8 +349,128 @@ function StatCounter({ label, value, color }) {
         background: `linear-gradient(90deg, transparent, ${color}, transparent)`,
         animation: 'gentleFlow 3s linear infinite'
       }} />
+      
       <div style={{
         fontSize: '2.8rem',
+        fontWeight: 'bold',
+        color: color,
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        textShadow: `0 0 10px ${color}80`,
+        marginBottom: '0.5rem'
+      }}>
+        {count}+
+      </div>
+      
+      <div style={{
+        fontSize: '0.9rem',
+        color: '#e5e7eb',
+        textTransform: 'uppercase',
+        letterSpacing: '0.5px',
+        fontWeight: '600'
+      }}>
+        {label}
+      </div>
+    </div>
+  );
+}
+
+// Interactive card component
+function InteractiveCard({ icon, title, description, color, particles }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      style={{
+        background: isHovered 
+          ? 'linear-gradient(135deg, rgba(15, 15, 25, 0.9) 0%, rgba(25, 25, 35, 0.95) 100%)'
+          : 'linear-gradient(135deg, rgba(15, 15, 25, 0.8) 0%, rgba(25, 25, 35, 0.85) 100%)',
+        borderRadius: '20px',
+        padding: '2.5rem',
+        border: `1px solid ${color}30`,
+        transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        cursor: 'pointer',
+        position: 'relative',
+        overflow: 'hidden',
+        transform: isHovered ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
+        boxShadow: isHovered 
+          ? `0 20px 40px ${color}20, 0 0 30px ${color}15` 
+          : `0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px ${color}10`,
+        backdropFilter: 'blur(20px)'
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div style={{
+        fontSize: '4rem',
+        marginBottom: '1.5rem',
+        filter: isHovered ? 'drop-shadow(0 0 15px currentColor)' : 'none',
+        transition: 'filter 0.3s ease'
+      }}>
+        {icon}
+      </div>
+      
+      <h3 style={{
+        fontSize: '1.8rem',
+        fontWeight: 'bold',
+        color: color,
+        marginBottom: '1rem',
+        textShadow: `0 0 10px ${color}40`
+      }}>
+        {title}
+      </h3>
+      
+      <p style={{
+        color: '#d1d5db',
+        fontSize: '1.1rem',
+        lineHeight: '1.6'
+      }}>
+        {description}
+      </p>
+    </div>
+  );
+}
+
+// Pulse button component
+function PulseButton({ text, primary, onClick }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        background: primary 
+          ? 'linear-gradient(45deg, #3b82f6, #60a5fa)' 
+          : 'transparent',
+        color: primary ? '#000' : '#60a5fa',
+        border: primary ? 'none' : '2px solid #60a5fa',
+        padding: '1rem 2rem',
+        borderRadius: '50px',
+        fontSize: '1.1rem',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+        position: 'relative',
+        overflow: 'hidden',
+        transition: 'all 0.3s ease',
+        textTransform: 'uppercase',
+        letterSpacing: '1px',
+        transform: isHovered ? 'translateY(-3px)' : 'translateY(0)',
+        boxShadow: isHovered 
+          ? '0 15px 30px rgba(59, 130, 246, 0.4)' 
+          : '0 5px 15px rgba(59, 130, 246, 0.2)',
+        animation: primary ? 'modernPulse 3s ease-in-out infinite' : 'none'
+      }}
+    >
+      {isHovered && (
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '-100%',
+          width: '100%',
+          height: '1px',
+          background: primary 
+            ? 'linear-gradient(90deg, transparent, #000, transparent)'
             : 'linear-gradient(90deg, transparent, #60a5fa, transparent)',
           animation: 'gentleFlow 1s ease-in-out infinite',
           transform: 'translateY(-50%)'
