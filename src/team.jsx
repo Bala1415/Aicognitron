@@ -139,17 +139,20 @@ function Team() {
       }}>
         {/* Animated header */}
         <div style={{ marginBottom: '3rem' }}>
-          <h2 style={{ 
-            fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
-            fontWeight: 800, 
-            background: 'linear-gradient(45deg, #7ed6df, #70a1ff, #ff6b6b)',
-            backgroundSize: '300% 300%',
-            animation: 'gradientShift 3s ease infinite',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            marginBottom: '1rem'
-          }}>
+          <h2 
+            className="team-header"
+            style={{ 
+              fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
+              fontWeight: 800, 
+              background: 'linear-gradient(45deg, #7ed6df, #70a1ff, #ff6b6b)',
+              backgroundSize: '300% 300%',
+              animation: 'gradientShift 3s ease infinite',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              marginBottom: '1rem'
+            }}
+          >
             MEET THE TEAM 🚀
           </h2>
           
@@ -167,12 +170,15 @@ function Team() {
         </div>
         
         {/* Team grid */}
-        <div style={{
-          display: 'grid',
-          gap: '2rem',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          marginBottom: '3rem'
-        }}>
+        <div 
+          className="team-grid"
+          style={{
+            display: 'grid',
+            gap: '2rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            marginBottom: '3rem'
+          }}
+        >
           {filteredMembers.map((member, index) => (
             <EnhancedMemberCard
               key={member.id}
@@ -206,22 +212,66 @@ function Team() {
         @keyframes slideUp {
           from { 
             opacity: 0; 
-            transform: translateY(30px); 
+            transform: translate3d(0, 30px, 0); 
           }
           to { 
             opacity: 1; 
-            transform: translateY(0); 
+            transform: translate3d(0, 0, 0); 
           }
         }
         
         @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
+          0%, 100% { transform: scale3d(1, 1, 1); }
+          50% { transform: scale3d(1.05, 1.05, 1); }
         }
         
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-10px) rotate(5deg); }
+          0%, 100% { transform: translate3d(0, 0, 0) rotateZ(0deg); }
+          50% { transform: translate3d(0, -10px, 0) rotateZ(5deg); }
+        }
+        
+        /* Performance optimizations for all devices */
+        * {
+          -webkit-transform: translateZ(0);
+          -moz-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          -o-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        
+        .team-card {
+          will-change: transform, opacity;
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+        
+        .team-card:hover {
+          transform: translate3d(0, -10px, 0) scale3d(1.02, 1.02, 1);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+          .team-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+          }
+          
+          .team-card {
+            padding: 2rem !important;
+          }
+          
+          .team-header {
+            font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+          }
+        }
+        
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
         }
       `}</style>
     </section>
@@ -266,12 +316,13 @@ function FilterButton({ active, onClick, label }) {
   );
 }
 
-// Enhanced member card with animations
+// Enhanced member card with optimized animations for all devices
 function EnhancedMemberCard({ member, index, onClick, isSelected }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
+      className="team-card"
       style={{
         background: isSelected 
           ? 'linear-gradient(135deg, rgba(126, 214, 223, 0.2) 0%, rgba(112, 161, 255, 0.2) 100%)'
@@ -281,35 +332,37 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
         borderRadius: '25px',
         padding: '2.5rem',
         border: `2px solid ${isSelected ? '#7ed6df' : 'rgba(126, 214, 223, 0.2)'}`,
-        transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
         cursor: 'pointer',
         position: 'relative',
         overflow: 'hidden',
-        transform: isHovered ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
         boxShadow: isHovered 
-          ? '0 25px 50px rgba(126, 214, 223, 0.3)' 
-          : '0 8px 32px rgba(0, 0, 0, 0.2)',
-        animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
+          ? '0 20px 40px rgba(126, 214, 223, 0.25)' 
+          : '0 8px 25px rgba(0, 0, 0, 0.2)',
+        animation: `slideUp 0.6s ease-out ${index * 0.1}s both`,
+        willChange: 'transform, opacity',
+        backfaceVisibility: 'hidden'
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
     >
-      {/* Floating particles effect */}
-      {isHovered && (
+      {/* Optimized floating particles - only show on desktop */}
+      {isHovered && window.innerWidth > 768 && (
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
-          {[...Array(8)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <div
               key={i}
               style={{
                 position: 'absolute',
-                width: '3px',
-                height: '3px',
+                width: '2px',
+                height: '2px',
                 background: '#7ed6df',
                 borderRadius: '50%',
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `float 3s ease-in-out infinite ${Math.random() * 2}s`
+                left: `${20 + Math.random() * 60}%`,
+                top: `${20 + Math.random() * 60}%`,
+                animation: `float 2s ease-in-out infinite ${i * 0.5}s`,
+                opacity: 0.7
               }}
             />
           ))}
