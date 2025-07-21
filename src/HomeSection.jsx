@@ -41,7 +41,7 @@ function HomeSection() {
         borderRadius: '15px',
       }}>
         <img 
-          src="/src/assets/srm.png" 
+          src="/assets/srm.png" 
           alt="SRM Institute of Science and Technology" 
           style={{ 
             height: '60px', 
@@ -77,7 +77,7 @@ function HomeSection() {
         }}>
           {/* BIS Logo on the left */}
           <img 
-            src="/src/assets/BIS LOGO.png" 
+            src="/assets/BIS_LOGO.png" 
             alt="BIS Logo" 
             style={{ 
               height: '80px', 
@@ -130,7 +130,7 @@ function HomeSection() {
           
           {/* Cognitron Logo on the right */}
           <img 
-            src="/src/assets/cognitron.png" 
+            src="/assets/cognitron.png" 
             alt="Cognitron Logo" 
             style={{ 
               height: '200px', 
