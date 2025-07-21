@@ -27,19 +27,30 @@ function HomeSection() {
       boxSizing: 'border-box',
       background: 'none',
     }}>
-        {/* Interactive cursor follower */}
-        <div style={{
-          position: 'fixed',
-          left: mousePosition.x - 80,
-          top: mousePosition.y - 80,
-          width: '160px',
-          height: '160px',
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%)',
-          borderRadius: '50%',
-          pointerEvents: 'none',
-          zIndex: 1,
-          transition: 'all 0.1s ease'
-        }} />
+      {/* Simple top banner - optional, can be removed */}
+      <div style={{
+        width: 'calc(100vw - 100px)',
+        height: '60px',
+        background: '#fff',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: '0 auto',
+        padding: '0 3vw',
+        boxSizing: 'border-box',
+        borderRadius: '15px',
+      }}>
+        <img 
+          src="/src/assets/srm.png" 
+          alt="SRM Institute of Science and Technology" 
+          style={{ 
+            height: '60px', 
+            width: 'auto', 
+            objectFit: 'contain', 
+            display: 'flex' 
+          }} 
+        />
+      </div>
 
       <div style={{
         maxWidth: '1200px',
@@ -52,79 +63,83 @@ function HomeSection() {
         flexDirection: 'column',
         alignItems: 'center',
       }}>
-        {/* Modern glowing title */}
+        {/* Modern glowing title with logos */}
         <div style={{
           position: 'relative',
           marginBottom: '2.5vw',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
           alignItems: 'center',
-        }}>
-          <h1 style={{ 
-            fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-            fontWeight: 900, 
-            color: '#3b82f6',
-            textShadow: '0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3)',
-            marginBottom: '1rem',
-            position: 'relative',
-            animation: 'subtleGlow 4s ease-in-out infinite'
-          }}>
-            AI COGNITRON CLUB
-            {/* Subtle border accents */}
-            <div style={{
-              position: 'absolute',
-              top: '-8px',
-              left: '10%',
-              right: '10%',
-              height: '1px',
-              background: 'linear-gradient(90deg, transparent, #60a5fa, #3b82f6, #60a5fa, transparent)',
-              animation: 'gentleFlow 3s ease-in-out infinite'
-            }} />
-            <div style={{
-              position: 'absolute',
-              bottom: '-8px',
-              left: '10%',
-              right: '10%',
-              height: '1px',
-              background: 'linear-gradient(90deg, transparent, #3b82f6, #60a5fa, #3b82f6, transparent)',
-              animation: 'gentleFlow 3s ease-in-out infinite reverse'
-            }} />
-          </h1>
-          
-          {/* Typewriter effect subtitle */}
-          <TypewriterText />
-        </div>
-
-        {/* Modern stats with subtle glow */}
-        <div style={{
-          display: 'flex',
           justifyContent: 'center',
-          alignItems: 'stretch',
-          gap: '2vw',
-          marginBottom: '3vw',
-          flexWrap: 'wrap',
-          width: '100%',
-          boxSizing: 'border-box',
+          gap: '3rem',
+          flexWrap: 'wrap'
         }}>
-          <StatCounter label="Projects" value={42} color="#3b82f6" />
-          <StatCounter label="Members" value={150} color="#60a5fa" />
-          <StatCounter label="Events" value={25} color="#93c5fd" />
+          {/* BIS Logo on the left */}
+          <img 
+            src="/src/assets/BIS LOGO.png" 
+            alt="BIS Logo" 
+            style={{ 
+              height: '80px', 
+              width: 'auto', 
+              objectFit: 'contain', 
+              display: 'block' 
+            }} 
+          />
+          
+          {/* Main heading and subtitle */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center'
+          }}>
+            <h1 style={{ 
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
+              fontWeight: 900, 
+              color: '#3b82f6',
+              textShadow: '0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3)',
+              marginBottom: '1rem',
+              position: 'relative',
+              animation: 'subtleGlow 4s ease-in-out infinite'
+            }}>
+              AI COGNITRON CLUB
+              {/* Subtle border accents */}
+              <div style={{
+                position: 'absolute',
+                top: '-8px',
+                left: '10%',
+                right: '10%',
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent, #60a5fa, #3b82f6, #60a5fa, transparent)',
+                animation: 'gentleFlow 3s ease-in-out infinite'
+              }} />
+              <div style={{
+                position: 'absolute',
+                bottom: '-8px',
+                left: '10%',
+                right: '10%',
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent, #3b82f6, #60a5fa, #3b82f6, transparent)',
+                animation: 'gentleFlow 3s ease-in-out infinite reverse'
+              }} />
+            </h1>
+            {/* Typewriter effect subtitle */}
+            <TypewriterText />
+          </div>
+          
+          {/* Cognitron Logo on the right */}
+          <img 
+            src="/src/assets/cognitron.png" 
+            alt="Cognitron Logo" 
+            style={{ 
+              height: '200px', 
+              width: '200px', 
+              objectFit: 'contain', 
+              display: 'block' 
+            }} 
+          />
         </div>
-      {/* Logos from assets folder below navbar */}
-      <div style={{
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '2vw',
-        margin: '2vw 0 3vw 0',
-        flexWrap: 'wrap',
-      }}>
-        <img src="/src/assets/react.svg" alt="React Logo" style={{ height: '48px', width: 'auto' }} />
-        {/* Add more logos here as needed,
-        e.g. <img src="/src/assets/yourlogo.svg" alt="Logo" style={{ height: '48px', width: 'auto' }} /> */}
-      </div>
 
         {/* Interactive modern cards */}
         <div style={{
@@ -175,7 +190,6 @@ function HomeSection() {
             primary={true}
             onClick={() => alert('Welcome to the future! 🎉')}
           />
-          
           <PulseButton 
             text="💡 EXPLORE PROJECTS"
             primary={false}
@@ -193,13 +207,11 @@ function HomeSection() {
             text-shadow: 0 0 15px rgba(59, 130, 246, 0.7), 0 0 25px rgba(59, 130, 246, 0.4);
           }
         }
-        
         @keyframes gentleFlow {
           0% { transform: translateX(-20px); opacity: 0.6; }
           50% { opacity: 1; }
           100% { transform: translateX(20px); opacity: 0.6; }
         }
-        
         @keyframes slideUp {
           from { 
             opacity: 0; 
@@ -210,7 +222,6 @@ function HomeSection() {
             transform: translateY(0); 
           }
         }
-        
         @keyframes modernPulse {
           0%, 100% { 
             transform: scale(1);
@@ -221,7 +232,6 @@ function HomeSection() {
             filter: brightness(1.1);
           }
         }
-        
         @keyframes modernFloat {
           0%, 100% { 
             transform: translateY(0px);
@@ -230,7 +240,6 @@ function HomeSection() {
             transform: translateY(-5px);
           }
         }
-        
         @keyframes modernGlow {
           0%, 100% { 
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), inset 0 0 10px rgba(255,255,255,0.05);
