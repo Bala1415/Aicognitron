@@ -50,7 +50,7 @@ function Team() {
     },
     // Level 2
     {
-      image: "https://i.pravatar.cc/300?img=16",
+      image: "",
       title: "Pavithran",
       subtitle: "Technical Program Manager",
       handle: "@pavithran",
@@ -64,7 +64,7 @@ function Team() {
       level: "level2"
     },
     {
-      image: "https://i.pravatar.cc/300?img=25",
+      image: "",
       title: "Aakash",
       subtitle: "Technical Head",
       handle: "@aakash",
@@ -78,7 +78,7 @@ function Team() {
       level: "level2"
     },
     {
-      image: "https://i.pravatar.cc/300?img=60",
+      image: "",
       title: "Sethumadhavan",
       subtitle: "Chief Technical Officer",
       handle: "@sethu",
@@ -93,7 +93,7 @@ function Team() {
     },
     // Level 3
     {
-      image: "https://i.pravatar.cc/300?img=12",
+      image: "",
       title: "Kavirajan",
       subtitle: "Tech Innovate Lead",
       handle: "@kavirajan",
@@ -107,7 +107,7 @@ function Team() {
       level: "level3"
     },
     {
-      image: "https://i.pravatar.cc/300?img=14",
+      image: "",
       title: "Balavignesh",
       subtitle: "Platform Developer",
       handle: "@balavignesh",
@@ -121,7 +121,7 @@ function Team() {
       level: "level3"
     },
     {
-      image: "https://i.pravatar.cc/300?img=20",
+      image: "",
       title: "Subha",
       subtitle: "Tech Content Curator",
       handle: "@subha",
@@ -133,6 +133,46 @@ function Team() {
       skills: ["Content Creation", "Technical Writing"],
       projects: ["Content Curation"],
       level: "level3"
+    },
+    //level4
+    {
+      image: "",
+      title: "John Doe",
+      subtitle: "AI Researcher",
+      handle: "@johndoe",
+      borderColor: "#FFBB33",
+      gradient: "linear-gradient(120deg, #FFBB33, #000)",
+      url: "https://linkedin.com/in/",
+      department: "AI & Data Science",
+      level: "level4"
+    },
+    {
+      image: "",
+      title: "Jane Smith",
+      borderColor: "#FF5733",
+      gradient: "linear-gradient(120deg, #FF5733, #000)",
+      url: "https://linkedin.com/in/",
+      department: "AI & Data Science",
+      level: "level4"
+    },
+     {
+      image: "",
+      title: "Jane Smith",
+      borderColor: "#FF5733",
+      gradient: "linear-gradient(120deg, #FF5733, #000)",
+      url: "https://linkedin.com/in/",
+      department: "AI & Data Science",
+      level: "level4"
+    },
+
+    {
+      image: "",
+      title: "Jane Smith",
+      borderColor: "#FF5733",
+      gradient: "linear-gradient(120deg, #FF5733, #000)",
+      url: "https://linkedin.com/in/",
+      department: "AI & Data Science",
+      level: "level4"
     }
   ];
 
