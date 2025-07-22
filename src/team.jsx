@@ -6,7 +6,7 @@ function Team() {
   const teamMembers = [
     // Level 1
     {
-      id: 1,
+      id: <img src="https://via.placeholder.com/150" alt="Muthusenthil" />,
       name: "Muthusenthil",
       position: "Head of the Department",
       department: "AI & Data Science",
@@ -18,7 +18,7 @@ function Team() {
       level: "level1"
     },
     {
-      id: 2,
+      id: <img src="public\assets\team\Abinaya.jpg" alt="Abinaya" />,
       name: "Abinaya",
       position: "Staff",
       department: "AI & Data Science",

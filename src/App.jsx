@@ -20,12 +20,10 @@ function App() {
       minHeight: '100vh', 
       width: '100vw', 
       overflowX: 'hidden', 
-      background: 'linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 25%, #16213e 50%, #0f172a 75%, #0f0f1a 100%)', 
       color: '#ffffff', 
       fontFamily: 'system-ui, -apple-system, Segoe UI, sans-serif', 
       position: 'relative' 
     }}>
-      <ModernAnimatedBackground />
       <Navbar section={section} setSection={setSection} sections={sections} />
       <div style={{ height: 70 }} />
       {section === 'home' && <HomeSection />}
@@ -33,7 +31,7 @@ function App() {
       {section === 'team' && <Team />}
       {section === 'blogs' && <BlogsSection />}
       {section === 'events' && <EventsSection />}
-      <footer style={{ 
+      {/* <footer style={{ 
         textAlign: 'center', 
         color: '#60a5fa', 
         padding: '2rem 0 1rem', 
@@ -43,7 +41,7 @@ function App() {
         textShadow: '0 0 5px rgba(96, 165, 250, 0.6)'
       }}>
         &copy; {new Date().getFullYear()} AI Cognitron Club | AI & DS Department
-      </footer>
+      </footer> */}
     </div>
   );
 }
