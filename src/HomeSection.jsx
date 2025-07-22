@@ -3,14 +3,35 @@ import Hyperspeed from './Hyperspeed';
 
 function HomeSection() {
   return (
-    <section id="home" className="home-section">
+    <>
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          overflow-x: hidden;
+        }
+        
+        .home-section {
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+      `}</style>
+      <section id="home" className="home-section" style={{
+        position: 'relative',
+        width: '100%',
+        maxWidth: '100vw',
+        height: '100vh',
+        overflow: 'hidden'
+      }}>
       {/* Hyperspeed Background Effect */}
       <div style={{
-        position: 'fixed',
+        position: 'absolute',
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
         zIndex: -1,
         opacity: 0.5
       }}>
@@ -53,21 +74,38 @@ function HomeSection() {
             }
           }}
         />
+      </div>
 
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          textAlign: 'center',
-          color: '#ffffff',
-          zIndex: 1,
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        textAlign: 'center',
+        color: '#ffffff',
+        zIndex: 1,
+        width: '100%',
+        maxWidth: '800px',
+        padding: '0 2rem',
+        boxSizing: 'border-box'
+      }}>
+        <h1 style={{
+          fontSize: 'clamp(2rem, 5vw, 4rem)',
+          margin: '0 0 1rem 0',
+          wordWrap: 'break-word'
         }}>
-          <h1>Welcome to Aicognitron</h1>
-          <p>Your journey into the future of AI starts here.</p>    
-          </div>
+          Welcome to Aicognitron
+        </h1>
+        <p style={{
+          fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
+          margin: 0,
+          wordWrap: 'break-word'
+        }}>
+          Your journey into the future of AI starts here.
+        </p>    
       </div>
     </section>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ChromaGrid from './ChromaGrid';
 
 function Team() {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -6,113 +7,131 @@ function Team() {
   const teamMembers = [
     // Level 1
     {
-      id: <img src="https://via.placeholder.com/150" alt="Muthusenthil" />,
-      name: "Muthusenthil",
-      position: "Head of the Department",
+      image: "",
+      title: "Dr.Muthusenthil",
+      subtitle: "Head of the Department",
+      handle: "@muthusenthil",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg, #4F46E5, #000)",
+      url: "https://github.com/",
       department: "AI & Data Science",
-      image: "👨‍🏫",
       description: "Guiding the department and club with vision and leadership.",
       skills: ["Leadership", "Academics", "Mentorship"],
       projects: ["Department Strategy", "Faculty Development"],
-      social: {},
       level: "level1"
     },
     {
-      id: <img src="public\assets\team\Abinaya.jpg" alt="Abinaya" />,
-      name: "Abinaya",
-      position: "Staff",
+      image: "public/assets/team/.jpg",
+      title: "Ms.Abinaya",
+      subtitle: "Staff",
+      handle: "@abinaya",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(210deg, #10B981, #000)",
+      url: "https://linkedin.com/in/",
       department: "AI & Data Science",
-      image: "👩‍🏫",
       description: "Supporting club activities and student development.",
       skills: ["Teaching", "Support", "Mentorship"],
       projects: ["Student Guidance"],
-      social: {},
       level: "level1"
     },
     {
-      id: 3,
-      name: "Sherlin Sherly",
-      position: "Staff",
+      image: "",
+      title: "Ms.Sherlin Sherly",
+      subtitle: "Staff",
+      handle: "@sherlinsherly",
+      borderColor: "#F59E0B",
+      gradient: "linear-gradient(165deg, #F59E0B, #000)",
+      url: "https://github.com/",
       department: "AI & Data Science",
-      image: "👩‍🏫",
       description: "Facilitating club events and academic excellence.",
       skills: ["Teaching", "Event Support"],
       projects: ["Event Facilitation"],
-      social: {},
       level: "level1"
     },
     // Level 2
     {
-      id: 4,
-      name: "Pavithran",
-      position: "Technical Program Manager",
+      image: "https://i.pravatar.cc/300?img=16",
+      title: "Pavithran",
+      subtitle: "Technical Program Manager",
+      handle: "@pavithran",
+      borderColor: "#EF4444",
+      gradient: "linear-gradient(195deg, #EF4444, #000)",
+      url: "https://linkedin.com/in/",
       department: "AI & Data Science",
-      image: "🧑‍💼",
       description: "Managing technical programs and club operations.",
       skills: ["Program Management", "Operations", "Technical Leadership"],
       projects: ["Tech Program Coordination"],
-      social: {},
       level: "level2"
     },
     {
-      id: 5,
-      name: "Aakash",
-      position: "Technical Head",
+      image: "https://i.pravatar.cc/300?img=25",
+      title: "Aakash",
+      subtitle: "Technical Head",
+      handle: "@aakash",
+      borderColor: "#8B5CF6",
+      gradient: "linear-gradient(225deg, #8B5CF6, #000)",
+      url: "https://github.com/",
       department: "AI & Data Science",
-      image: "🧑‍💻",
       description: "Leading technical teams and innovation initiatives.",
       skills: ["Technical Leadership", "Innovation", "Team Management"],
       projects: ["Innovation Drive"],
-      social: {},
       level: "level2"
     },
     {
-      id: 6,
-      name: "Sethu",
-      position: "Chief Technical Officer",
+      image: "https://i.pravatar.cc/300?img=60",
+      title: "Sethumadhavan",
+      subtitle: "Chief Technical Officer",
+      handle: "@sethu",
+      borderColor: "#06B6D4",
+      gradient: "linear-gradient(135deg, #06B6D4, #000)",
+      url: "https://aws.amazon.com/",
       department: "AI & Data Science",
-      image: "🧑‍🔬",
       description: "Overseeing technical strategy and club technology vision.",
       skills: ["Strategy", "Technology Vision", "Leadership"],
       projects: ["Tech Strategy"],
-      social: {},
       level: "level2"
     },
     // Level 3
     {
-      id: 7,
-      name: "Kavirajan",
-      position: "Tech Innovate Lead",
+      image: "https://i.pravatar.cc/300?img=12",
+      title: "Kavirajan",
+      subtitle: "Tech Innovate Lead",
+      handle: "@kavirajan",
+      borderColor: "#EC4899",
+      gradient: "linear-gradient(160deg, #EC4899, #000)",
+      url: "https://github.com/",
       department: "AI & Data Science",
-      image: "🧑‍�",
       description: "Driving innovation and new technology initiatives.",
       skills: ["Innovation", "Tech Leadership"],
       projects: ["Innovate Projects"],
-      social: {},
       level: "level3"
     },
     {
-      id: 8,
-      name: "Balavignesh",
-      position: "Platform Developer",
+      image: "https://i.pravatar.cc/300?img=14",
+      title: "Balavignesh",
+      subtitle: "Platform Developer",
+      handle: "@balavignesh",
+      borderColor: "#F97316",
+      gradient: "linear-gradient(245deg, #F97316, #000)",
+      url: "https://github.com/",
       department: "AI & Data Science",
-      image: "👨‍💻",
       description: "Developing and maintaining club platforms and tools.",
       skills: ["Development", "Platform Engineering"],
       projects: ["Platform Development"],
-      social: {},
       level: "level3"
     },
     {
-      id: 9,
-      name: "Subha",
-      position: "Tech Content Curator",
+      image: "https://i.pravatar.cc/300?img=20",
+      title: "Subha",
+      subtitle: "Tech Content Curator",
+      handle: "@subha",
+      borderColor: "#84CC16",
+      gradient: "linear-gradient(120deg, #84CC16, #000)",
+      url: "https://linkedin.com/in/",
       department: "AI & Data Science",
-      image: "👩‍💻",
       description: "Curating technical content and resources for the club.",
       skills: ["Content Creation", "Technical Writing"],
       projects: ["Content Curation"],
-      social: {},
       level: "level3"
     }
   ];
@@ -121,17 +140,44 @@ function Team() {
   const filteredMembers = teamMembers;
 
   return (
-    <section style={{ 
-      minHeight: 'calc(100vh - 120px)', 
-      display: 'flex', 
-      flexDirection: 'column', 
-      alignItems: 'center', 
-      justifyContent: 'flex-start', 
-      textAlign: 'center', 
-      zIndex: 2,
-      padding: '2rem',
-      paddingTop: '4rem'
-    }}>
+    <>
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          overflow-x: hidden;
+        }
+        
+        .team-section {
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+        
+        /* Ensure navbar stays fixed */
+        nav {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 1000 !important;
+        }
+      `}</style>
+      <section className="team-section" style={{ 
+        minHeight: 'calc(100vh - 120px)', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'flex-start', 
+        textAlign: 'center', 
+        zIndex: 2,
+        padding: '2rem',
+        paddingTop: '4rem',
+        width: '100%',
+        maxWidth: '100vw',
+        overflow: 'hidden'
+      }}>
       <div style={{
         maxWidth: '1400px',
         margin: '0 auto',
@@ -159,7 +205,7 @@ function Team() {
           <p style={{
             fontSize: '1.2rem',
             color: '#dff9fb',
-            maxWidth: '600px',
+            maxWidth: '500px',
             margin: '0 auto 2rem',
             lineHeight: '1.6'
           }}>
@@ -169,25 +215,26 @@ function Team() {
       {/* No filter buttons, all members shown below */}
         </div>
         
-        {/* Team grid */}
-        <div 
-          className="team-grid"
-          style={{
-            display: 'grid',
-            gap: '2rem',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            marginBottom: '3rem'
-          }}
-        >
-          {filteredMembers.map((member, index) => (
-            <EnhancedMemberCard
-              key={member.id}
-              member={member}
-              index={index}
-              onClick={() => setSelectedMember(member)}
-              isSelected={selectedMember?.id === member.id}
-            />
-          ))}
+        {/* ChromaGrid Team Display */}
+        <div style={{ 
+          height: '60vh', 
+          position: 'relative',
+          minHeight: '1400px',
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <ChromaGrid 
+            items={filteredMembers}
+            radius={300}
+            columns={3}
+            rows={3}
+            damping={0.45}
+            fadeOut={0.6}
+            ease="power3.out"
+            onItemClick={(member) => setSelectedMember(member)}
+          />
         </div>
         
         {/* Join team section */}
@@ -275,6 +322,7 @@ function Team() {
         }
       `}</style>
     </section>
+    </>
   );
 }
 
@@ -286,7 +334,7 @@ function FilterButton({ active, onClick, label }) {
       style={{
         background: active 
           ? 'linear-gradient(45deg, #7ed6df, #70a1ff)' 
-          : 'rgba(126, 214, 223, 0.1)',
+          : 'rgba(255, 255, 255, 0)',
         color: active ? '#000' : '#7ed6df',
         border: `2px solid ${active ? 'transparent' : '#7ed6df'}`,
         padding: '0.7rem 1.5rem',
@@ -325,10 +373,10 @@ function EnhancedMemberCard({ member, index, onClick, isSelected }) {
       className="team-card"
       style={{
         background: isSelected 
-          ? 'linear-gradient(135deg, rgba(126, 214, 223, 0.2) 0%, rgba(112, 161, 255, 0.2) 100%)'
+          ? 'linear-gradient(135deg, #7ed6df 0%, #70a1ff 100%)'
           : isHovered 
-            ? 'rgba(255,255,255,0.12)' 
-            : 'rgba(255,255,255,0.08)',
+            ? '#222' 
+            : '#181818',
         borderRadius: '25px',
         padding: '2.5rem',
         border: `2px solid ${isSelected ? '#7ed6df' : 'rgba(126, 214, 223, 0.2)'}`,
@@ -476,42 +524,76 @@ function MemberModal({ member, onClose }) {
         padding: '3rem',
         maxWidth: '600px',
         width: '100%',
-        border: '2px solid #7ed6df',
-        boxShadow: '0 25px 50px rgba(126, 214, 223, 0.3)',
+        border: `2px solid ${member.borderColor || '#7ed6df'}`,
+        boxShadow: `0 25px 50px ${member.borderColor || '#7ed6df'}30`,
         animation: 'slideUp 0.3s ease-out'
       }}
       onClick={(e) => e.stopPropagation()}
       >
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '6rem', marginBottom: '1rem' }}>
-            {member.image}
+          <div style={{ 
+            width: '120px',
+            height: '120px',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            margin: '0 auto 1rem',
+            border: `3px solid ${member.borderColor || '#7ed6df'}`
+          }}>
+            <img 
+              src={member.image} 
+              alt={member.title}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            />
           </div>
           
           <h2 style={{
             fontSize: '2.5rem',
             fontWeight: 'bold',
-            color: '#7ed6df',
+            color: member.borderColor || '#7ed6df',
             marginBottom: '0.5rem'
           }}>
-            {member.name}
+            {member.title}
           </h2>
           
           <div style={{
             fontSize: '1.4rem',
             color: '#70a1ff',
             fontWeight: '600',
+            marginBottom: '0.5rem'
+          }}>
+            {member.subtitle}
+          </div>
+
+          <div style={{
+            fontSize: '1rem',
+            color: '#aaa',
+            fontStyle: 'italic',
             marginBottom: '2rem'
           }}>
-            {member.position}
+            {member.handle}
           </div>
         </div>
 
         <div style={{ textAlign: 'left' }}>
-          <h3 style={{ color: '#7ed6df', marginBottom: '1rem' }}>Skills & Expertise</h3>
+          <p style={{
+            color: '#dff9fb',
+            fontSize: '1.1rem',
+            lineHeight: '1.6',
+            marginBottom: '2rem',
+            textAlign: 'center'
+          }}>
+            {member.description}
+          </p>
+
+          <h3 style={{ color: member.borderColor || '#7ed6df', marginBottom: '1rem' }}>Skills & Expertise</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
             {member.skills.map(skill => (
               <span key={skill} style={{
-                background: 'linear-gradient(45deg, #7ed6df, #70a1ff)',
+                background: member.borderColor || '#7ed6df',
                 color: '#000',
                 padding: '0.5rem 1rem',
                 borderRadius: '20px',
@@ -523,7 +605,7 @@ function MemberModal({ member, onClose }) {
             ))}
           </div>
 
-          <h3 style={{ color: '#7ed6df', marginBottom: '1rem' }}>Current Projects</h3>
+          <h3 style={{ color: member.borderColor || '#7ed6df', marginBottom: '1rem' }}>Current Projects</h3>
           <ul style={{ color: '#dff9fb', marginBottom: '2rem', paddingLeft: '1.5rem' }}>
             {member.projects.map(project => (
               <li key={project} style={{ marginBottom: '0.5rem' }}>{project}</li>
@@ -532,7 +614,7 @@ function MemberModal({ member, onClose }) {
         </div>
 
         <button onClick={onClose} style={{
-          background: 'linear-gradient(45deg, #7ed6df, #70a1ff)',
+          background: `linear-gradient(45deg, ${member.borderColor || '#7ed6df'}, ${member.borderColor || '#70a1ff'})`,
           color: '#000',
           border: 'none',
           padding: '1rem 2rem',

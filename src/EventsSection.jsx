@@ -3,7 +3,34 @@ import React from 'react';
 
 function EventsSection() {
   return (
-    <section style={{ minHeight: 'calc(100vh - 120px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', zIndex: 2 }}>
+    <>
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          overflow-x: hidden;
+        }
+        
+        .events-section {
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+      `}</style>
+      <section className="events-section" style={{ 
+        minHeight: 'calc(100vh - 120px)', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        textAlign: 'center', 
+        zIndex: 2,
+        width: '100%',
+        maxWidth: '100vw',
+        overflow: 'hidden',
+        padding: '2rem'
+      }}>
       <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#70a1ff', marginBottom: 18 }}>Event Schedule</h2>
       <p style={{ fontSize: 20, color: '#dff9fb', marginBottom: 24 }}>Stay tuned for our upcoming events! (Filler content)</p>
       <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -12,6 +39,7 @@ function EventsSection() {
         <EventCard month="September" title="Inter-College Hackathon" desc="Compete with the best! (Filler)" />
       </div>
     </section>
+    </>
   );
 }
 

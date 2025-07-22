@@ -2,15 +2,33 @@ import React from 'react';
 
 function BlogsSection() {
   return (
-    <section style={{ 
-      minHeight: 'calc(100vh - 120px)', 
-      display: 'flex', 
-      flexDirection: 'column', 
-      alignItems: 'center', 
-      justifyContent: 'center', 
-      zIndex: 2,
-      padding: '2rem'
-    }}>
+    <>
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          overflow-x: hidden;
+        }
+        
+        .blogs-section {
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+      `}</style>
+      <section className="blogs-section" style={{ 
+        minHeight: 'calc(100vh - 120px)', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        zIndex: 2,
+        padding: '2rem',
+        width: '100%',
+        maxWidth: '100vw',
+        overflow: 'hidden'
+      }}>
       <div style={{
         maxWidth: '1200px',
         margin: '0 auto',
@@ -148,6 +166,7 @@ function BlogsSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

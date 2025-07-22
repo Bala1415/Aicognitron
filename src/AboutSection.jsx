@@ -2,15 +2,33 @@ import React from 'react';
 
 function AboutSection() {
   return (
-    <section style={{ 
-      minHeight: 'calc(100vh - 120px)', 
-      display: 'flex', 
-      flexDirection: 'column', 
-      alignItems: 'center', 
-      justifyContent: 'center', 
-      zIndex: 2,
-      padding: '2rem'
-    }}>
+    <>
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          overflow-x: hidden;
+        }
+        
+        .about-section {
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+      `}</style>
+      <section className="about-section" style={{ 
+        minHeight: 'calc(100vh - 120px)', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        zIndex: 2,
+        padding: '2rem',
+        width: '100%',
+        maxWidth: '100vw',
+        overflow: 'hidden'
+      }}>
       <div style={{
         maxWidth: '1000px',
         margin: '0 auto'
@@ -133,12 +151,11 @@ function AboutSection() {
             "Artificial Intelligence is the new electricity" - Andrew Ng
           </p>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
-}
-
-function ActivityCard({ title, description }) {
+}function ActivityCard({ title, description }) {
   return (
     <div style={{
       padding: '1.5rem',
