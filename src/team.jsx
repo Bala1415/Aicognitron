@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import ChromaGrid from './ChromaGrid';
 
 function Team() {
   const [selectedMember, setSelectedMember] = useState(null);
 
   const teamMembers = [
-    // Level 1
     {
-      image: "",
+      image: "/assets/team/muthusenthil.jpg",
       title: "Dr.Muthusenthil",
       subtitle: "Head of the Department",
       handle: "@muthusenthil",
@@ -18,10 +16,11 @@ function Team() {
       description: "Guiding the department and club with vision and leadership.",
       skills: ["Leadership", "Academics", "Mentorship"],
       projects: ["Department Strategy", "Faculty Development"],
-      level: "level1"
+      level: "level1",
+      year: "Faculty"
     },
     {
-      image: "public/assets/team/.jpg",
+      image: "public/assets/team/Abinaya.jpg",
       title: "Ms.Abinaya",
       subtitle: "Staff",
       handle: "@abinaya",
@@ -32,10 +31,11 @@ function Team() {
       description: "Supporting club activities and student development.",
       skills: ["Teaching", "Support", "Mentorship"],
       projects: ["Student Guidance"],
-      level: "level1"
+      level: "level1",
+      year: "Faculty"
     },
     {
-      image: "",
+      image: "/assets/team/subhree.jpg",
       title: "Ms.Sherlin Sherly",
       subtitle: "Staff",
       handle: "@sherlinsherly",
@@ -46,11 +46,12 @@ function Team() {
       description: "Facilitating club events and academic excellence.",
       skills: ["Teaching", "Event Support"],
       projects: ["Event Facilitation"],
-      level: "level1"
+      level: "level1",
+      year: "Faculty"
     },
-    // Level 2
+    // Level 2 - cooordinators  
     {
-      image: "",
+      image: "public/assets/team/pavithran.jpg",
       title: "Pavithran",
       subtitle: "Technical Program Manager",
       handle: "@pavithran",
@@ -61,10 +62,11 @@ function Team() {
       description: "Managing technical programs and club operations.",
       skills: ["Program Management", "Operations", "Technical Leadership"],
       projects: ["Tech Program Coordination"],
-      level: "level2"
+      level: "level2",
+      year: "4th Year"
     },
     {
-      image: "",
+      image: "/assets/team/aakash.jpg",
       title: "Aakash",
       subtitle: "Technical Head",
       handle: "@aakash",
@@ -75,10 +77,11 @@ function Team() {
       description: "Leading technical teams and innovation initiatives.",
       skills: ["Technical Leadership", "Innovation", "Team Management"],
       projects: ["Innovation Drive"],
-      level: "level2"
+      level: "level2",
+      year: "4th Year"
     },
     {
-      image: "",
+      image: "/assets/team/sethumadhavan.jpg",
       title: "Sethumadhavan",
       subtitle: "Chief Technical Officer",
       handle: "@sethu",
@@ -89,11 +92,12 @@ function Team() {
       description: "Overseeing technical strategy and club technology vision.",
       skills: ["Strategy", "Technology Vision", "Leadership"],
       projects: ["Tech Strategy"],
-      level: "level2"
+      level: "level2",
+      year: "4th Year"
     },
-    // Level 3
+    // Level 3 - Team Leads
     {
-      image: "",
+      image: "/assets/team/kavirajan.jpg",
       title: "Kavirajan",
       subtitle: "Tech Innovate Lead",
       handle: "@kavirajan",
@@ -104,10 +108,11 @@ function Team() {
       description: "Driving innovation and new technology initiatives.",
       skills: ["Innovation", "Tech Leadership"],
       projects: ["Innovate Projects"],
-      level: "level3"
+      level: "level3",
+      year: "3rd Year"
     },
     {
-      image: "",
+      image: "/assets/team/balavignesh.jpg",
       title: "Balavignesh",
       subtitle: "Platform Developer",
       handle: "@balavignesh",
@@ -118,10 +123,11 @@ function Team() {
       description: "Developing and maintaining club platforms and tools.",
       skills: ["Development", "Platform Engineering"],
       projects: ["Platform Development"],
-      level: "level3"
+      level: "level3",
+      year: "2nd Year"
     },
     {
-      image: "",
+      image: "/assets/team/subha.jpg",
       title: "Subha",
       subtitle: "Tech Content Curator",
       handle: "@subha",
@@ -132,11 +138,12 @@ function Team() {
       description: "Curating technical content and resources for the club.",
       skills: ["Content Creation", "Technical Writing"],
       projects: ["Content Curation"],
-      level: "level3"
+      level: "level3",
+      year: "3rd Year"
     },
-    //level4
+    // Level 4 - Core Members
     {
-      image: "",
+      image: "/assets/team/johndoe.jpg",
       title: "John Doe",
       subtitle: "AI Researcher",
       handle: "@johndoe",
@@ -144,55 +151,87 @@ function Team() {
       gradient: "linear-gradient(120deg, #FFBB33, #000)",
       url: "https://linkedin.com/in/",
       department: "AI & Data Science",
-      level: "level4"
+      description: "Research and development in AI technologies.",
+      skills: ["AI Research", "Machine Learning"],
+      projects: ["AI Research Projects"],
+      level: "level4",
+      year: "2nd Year"
     },
     {
-      image: "",
+      image: "/assets/team/janesmith.jpg",
       title: "Jane Smith",
+      subtitle: "Data Scientist",
+      handle: "@janesmith",
       borderColor: "#FF5733",
       gradient: "linear-gradient(120deg, #FF5733, #000)",
       url: "https://linkedin.com/in/",
       department: "AI & Data Science",
-      level: "level4"
+      description: "Data analysis and visualization expert.",
+      skills: ["Data Science", "Analytics"],
+      projects: ["Data Projects"],
+      level: "level4",
+      year: "2nd Year"
     },
-     {
-      image: "",
-      title: "Jane Smith",
-      borderColor: "#FF5733",
-      gradient: "linear-gradient(120deg, #FF5733, #000)",
-      url: "https://linkedin.com/in/",
-      department: "AI & Data Science",
-      level: "level4"
-    },
-
     {
-      image: "",
-      title: "Jane Smith",
-      borderColor: "#FF5733",
-      gradient: "linear-gradient(120deg, #FF5733, #000)",
-      url: "https://linkedin.com/in/",
+      image: "/assets/team/alex.jpg",
+      title: "Alex Kumar",
+      subtitle: "ML Engineer",
+      handle: "@alexkumar",
+      borderColor: "#9C27B0",
+      gradient: "linear-gradient(120deg, #9C27B0, #000)",
+      url: "https://github.com/",
       department: "AI & Data Science",
-      level: "level4"
+      description: "Machine learning model development and deployment.",
+      skills: ["Machine Learning", "Python", "TensorFlow"],
+      projects: ["ML Model Development"],
+      level: "level4",
+      year: "2nd Year"
+    },
+    {
+      image: "/assets/team/sara.jpg",
+      title: "Sara Patel",
+      subtitle: "Frontend Developer",
+      handle: "@sarapatel",
+      borderColor: "#00BCD4",
+      gradient: "linear-gradient(120deg, #00BCD4, #000)",
+      url: "https://portfolio.com/",
+      department: "AI & Data Science",
+      description: "Creating user-friendly interfaces for AI applications.",
+      skills: ["React", "JavaScript", "UI/UX"],
+      projects: ["Web Development"],
+      level: "level4",
+      year: "1st Year"
     }
   ];
 
-  // Show all members, no filtering
-  const filteredMembers = teamMembers;
+  // Group members by level for sections
+  const facultyMembers = teamMembers.filter(member => member.level === "level1");
+  const seniorLeads = teamMembers.filter(member => member.level === "level2");
+  const teamLeads = teamMembers.filter(member => member.level === "level3");
+  const coreMembers = teamMembers.filter(member => member.level === "level4");
 
   return (
     <>
       <style>{`
         * {
           box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: 'Poppins', sans-serif;
         }
         
         body {
           overflow-x: hidden;
+          background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+          min-height: 100vh;
         }
         
         .team-section {
           max-width: 100vw;
           overflow-x: hidden;
+          background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+          min-height: 100vh;
+          padding: 2rem 0;
         }
         
         /* Ensure navbar stays fixed */
@@ -203,156 +242,185 @@ function Team() {
           right: 0 !important;
           z-index: 1000 !important;
         }
-      `}</style>
-      <section className="team-section" style={{ 
-        minHeight: 'calc(100vh - 120px)', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        justifyContent: 'flex-start', 
-        textAlign: 'center', 
-        zIndex: 2,
-        padding: '2rem',
-        paddingTop: '4rem',
-        width: '100%',
-        maxWidth: '100vw',
-        overflow: 'hidden'
-      }}>
-      <div style={{
-        maxWidth: '1400px',
-        margin: '0 auto',
-        width: '100%'
-      }}>
-        {/* Animated header */}
-        <div style={{ marginBottom: '3rem' }}>
-          <h2 
-            className="team-header"
-            style={{ 
-              fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
-              fontWeight: 800, 
-              background: 'linear-gradient(45deg, #7ed6df, #70a1ff, #ff6b6b)',
-              backgroundSize: '300% 300%',
-              animation: 'gradientShift 3s ease infinite',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              marginBottom: '1rem'
-            }}
-          >
-            MEET THE TEAM 🚀
-          </h2>
-          
-          <p style={{
-            fontSize: '1.2rem',
-            color: '#dff9fb',
-            maxWidth: '500px',
-            margin: '0 auto 2rem',
-            lineHeight: '1.6'
-          }}>
-            The brilliant minds driving innovation and building the future of AI
-          </p>
 
-      {/* No filter buttons, all members shown below */}
-        </div>
-        
-        {/* ChromaGrid Team Display */}
-        <div style={{ 
-          height: '60vh', 
-          position: 'relative',
-          minHeight: '1400px',
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <ChromaGrid 
-            items={filteredMembers}
-            radius={300}
-            columns={3}
-            rows={3}
-            damping={0.45}
-            fadeOut={0.6}
-            ease="power3.out"
-            onItemClick={(member) => setSelectedMember(member)}
-          />
-        </div>
-        
-        {/* Join team section */}
-        <JoinTeamSection />
-      </div>
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          padding: 4rem 2rem 2rem;
+        }
 
-      {/* Member detail modal */}
-      {selectedMember && (
-        <MemberModal 
-          member={selectedMember} 
-          onClose={() => setSelectedMember(null)} 
-        />
-      )}
+        .title {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
 
-      <style>{`
+        .title h4 {
+          position: relative;
+          display: inline-block;
+          padding: 15px;
+          color: #ffffff;
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-weight: 500;
+          letter-spacing: 1.2px;
+          word-spacing: 5px;
+          text-transform: uppercase;
+          background: linear-gradient(45deg, #7ed6df, #70a1ff, #ff6b6b);
+          background-size: 300% 300%;
+          animation: gradientShift 3s ease infinite;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          backdrop-filter: blur(15px);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+          margin: 40px 0;
+          width: 100%;
+          max-width: 1200px;
+        }
+
+        .section h5 {
+          text-align: center;
+          color: #ffffff;
+          font-size: clamp(1.8rem, 3vw, 2.5rem);
+          font-weight: 500;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        .card_Container {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 30px;
+          margin: 40px 0;
+        }
+
+        .card {
+          position: relative;
+          width: 250px;
+          height: 300px;
+          overflow: hidden;
+          box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.8),
+                      inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
+          border-radius: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background: linear-gradient(135deg, rgba(126, 214, 223, 0.1), rgba(112, 161, 255, 0.1));
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 40px 40px -20px rgba(126, 214, 223, 0.3);
+        }
+
+        .card .imgBx {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .card .imgBx img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .card:hover .imgBx img {
+          transform: scale(1.1);
+        }
+
+        .card .content {
+          position: absolute;
+          bottom: -160px;
+          width: 100%;
+          height: 160px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          backdrop-filter: blur(15px);
+          background: rgba(0, 0, 0, 0.7);
+          box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 15px 15px 0 0;
+          transition: bottom 0.5s ease;
+          transition-delay: 0.65s;
+        }
+
+        .card:hover .content {
+          bottom: 0;
+          transition-delay: 0ms;
+        }
+
+        .content .contentBx h3 {
+          text-transform: uppercase;
+          color: #fff;
+          letter-spacing: 1px;
+          font-weight: 500;
+          font-size: 16px;
+          text-align: center;
+          margin: 20px 0 15px;
+          line-height: 1.2em;
+          transition: 0.5s;
+          transition-delay: 0.6s;
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+
+        .card:hover .content .contentBx h3 {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .content .contentBx h3 span {
+          font-size: 12px;
+          font-weight: 300;
+          text-transform: initial;
+          color: #7ed6df;
+        }
+
         @keyframes gradientShift {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
-        
-        @keyframes slideUp {
-          from { 
-            opacity: 0; 
-            transform: translate3d(0, 30px, 0); 
-          }
-          to { 
-            opacity: 1; 
-            transform: translate3d(0, 0, 0); 
-          }
-        }
-        
-        @keyframes pulse {
-          0%, 100% { transform: scale3d(1, 1, 1); }
-          50% { transform: scale3d(1.05, 1.05, 1); }
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translate3d(0, 0, 0) rotateZ(0deg); }
-          50% { transform: translate3d(0, -10px, 0) rotateZ(5deg); }
-        }
-        
-        /* Performance optimizations for all devices */
-        * {
-          -webkit-transform: translateZ(0);
-          -moz-transform: translateZ(0);
-          -ms-transform: translateZ(0);
-          -o-transform: translateZ(0);
-          transform: translateZ(0);
-        }
-        
-        .team-card {
-          will-change: transform, opacity;
-          backface-visibility: hidden;
-          perspective: 1000px;
-        }
-        
-        .team-card:hover {
-          transform: translate3d(0, -10px, 0) scale3d(1.02, 1.02, 1);
-        }
-        
-        /* Mobile optimizations */
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-          .team-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
+          .card_Container {
+            flex-direction: column;
+            align-items: center;
           }
           
-          .team-card {
-            padding: 2rem !important;
+          .card {
+            width: 280px;
+            height: 320px;
           }
           
-          .team-header {
-            font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+          .section h5 {
+            font-size: 1.5rem;
+          }
+          
+          .title h4 {
+            font-size: 2rem;
           }
         }
-        
-        /* Reduce motion for users who prefer it */
+
+        /* Reduce motion for accessibility */
         @media (prefers-reduced-motion: reduce) {
           * {
             animation-duration: 0.01ms !important;
@@ -361,180 +429,107 @@ function Team() {
           }
         }
       `}</style>
-    </section>
+      
+      <section className="team-section">
+        <div className="wrapper">
+          <div className="title">
+            <h4>AICOGNITRON</h4>
+          </div>
+
+          {/* Faculty Section */}
+          <div className="section">
+            <div className="card_Container">
+              {facultyMembers.map((member, index) => (
+                <TeamCard 
+                  key={index} 
+                  member={member} 
+                  onClick={() => setSelectedMember(member)} 
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Senior Leads Section */}
+          <div className="section">
+            <h5>cooordinators</h5>
+            <div className="card_Container">
+              {seniorLeads.map((member, index) => (
+                <TeamCard 
+                  key={index} 
+                  member={member} 
+                  onClick={() => setSelectedMember(member)} 
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Team Leads Section */}
+          <div className="section">
+             
+            <div className="card_Container">
+              {teamLeads.map((member, index) => (
+                <TeamCard 
+                  key={index} 
+                  member={member} 
+                  onClick={() => setSelectedMember(member)} 
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Core Members Section */}
+          <div className="section">
+            <h5>out reach volunteers</h5>
+            <div className="card_Container">
+              {coreMembers.map((member, index) => (
+                <TeamCard 
+                  key={index} 
+                  member={member} 
+                  onClick={() => setSelectedMember(member)} 
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Join team section */}
+          <JoinTeamSection />
+        </div>
+
+        {/* Member detail modal */}
+        {selectedMember && (
+          <MemberModal 
+            member={selectedMember} 
+            onClose={() => setSelectedMember(null)} 
+          />
+        )}
+      </section>
     </>
   );
 }
 
-// Filter button component
-function FilterButton({ active, onClick, label }) {
+// Team Card Component matching your HTML structure
+function TeamCard({ member, onClick }) {
   return (
-    <button
-      onClick={onClick}
-      style={{
-        background: active 
-          ? 'linear-gradient(45deg, #7ed6df, #70a1ff)' 
-          : 'rgba(255, 255, 255, 0)',
-        color: active ? '#000' : '#7ed6df',
-        border: `2px solid ${active ? 'transparent' : '#7ed6df'}`,
-        padding: '0.7rem 1.5rem',
-        borderRadius: '25px',
-        cursor: 'pointer',
-        fontSize: '0.9rem',
-        fontWeight: 'bold',
-        transition: 'all 0.3s ease',
-        textTransform: 'uppercase',
-        letterSpacing: '0.5px'
-      }}
-      onMouseEnter={(e) => {
-        if (!active) {
-          e.target.style.background = 'rgba(126, 214, 223, 0.2)';
-          e.target.style.transform = 'translateY(-2px)';
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (!active) {
-          e.target.style.background = 'rgba(126, 214, 223, 0.1)';
-          e.target.style.transform = 'translateY(0)';
-        }
-      }}
-    >
-      {label}
-    </button>
-  );
-}
-
-// Enhanced member card with optimized animations for all devices
-function EnhancedMemberCard({ member, index, onClick, isSelected }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div 
-      className="team-card"
-      style={{
-        background: isSelected 
-          ? 'linear-gradient(135deg, #7ed6df 0%, #70a1ff 100%)'
-          : isHovered 
-            ? '#222' 
-            : '#181818',
-        borderRadius: '25px',
-        padding: '2.5rem',
-        border: `2px solid ${isSelected ? '#7ed6df' : 'rgba(126, 214, 223, 0.2)'}`,
-        transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        cursor: 'pointer',
-        position: 'relative',
-        overflow: 'hidden',
-        boxShadow: isHovered 
-          ? '0 20px 40px rgba(126, 214, 223, 0.25)' 
-          : '0 8px 25px rgba(0, 0, 0, 0.2)',
-        animation: `slideUp 0.6s ease-out ${index * 0.1}s both`,
-        willChange: 'transform, opacity',
-        backfaceVisibility: 'hidden'
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick}
-    >
-      {/* Optimized floating particles - only show on desktop */}
-      {isHovered && window.innerWidth > 768 && (
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
-          {[...Array(4)].map((_, i) => (
-            <div
-              key={i}
-              style={{
-                position: 'absolute',
-                width: '2px',
-                height: '2px',
-                background: '#7ed6df',
-                borderRadius: '50%',
-                left: `${20 + Math.random() * 60}%`,
-                top: `${20 + Math.random() * 60}%`,
-                animation: `float 2s ease-in-out infinite ${i * 0.5}s`,
-                opacity: 0.7
-              }}
-            />
-          ))}
+    <div className="card" onClick={onClick}>
+      <div className="imgBx">
+        <img 
+          src={member.image || "/assets/team/placeholder.jpg"} 
+          alt={member.title}
+          onError={(e) => {
+            e.target.src = "/assets/team/placeholder.jpg";
+          }}
+        />
+      </div>
+      <div className="content">
+        <div className="contentBx">
+          <h3>
+            {member.title}
+            <br />
+            <span>{member.department}</span>
+            <br />
+            <span>{member.year}</span>
+          </h3>
         </div>
-      )}
-
-      <div style={{
-        fontSize: '5rem',
-        marginBottom: '1.5rem',
-        animation: isHovered ? 'pulse 2s ease-in-out infinite' : 'none'
-      }}>
-        {member.image}
-      </div>
-      
-      <h3 style={{
-        fontSize: '1.6rem',
-        fontWeight: 'bold',
-        color: '#7ed6df',
-        marginBottom: '0.5rem'
-      }}>
-        {member.name}
-      </h3>
-      
-      <div style={{
-        fontSize: '1.2rem',
-        fontWeight: '600',
-        background: 'linear-gradient(45deg, #70a1ff, #7ed6df)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-        marginBottom: '0.5rem'
-      }}>
-        {member.position}
-      </div>
-      
-      <div style={{
-        fontSize: '0.9rem',
-        color: '#b2bec3',
-        marginBottom: '1rem',
-        fontStyle: 'italic'
-      }}>
-        {member.department}
-      </div>
-      
-      <p style={{
-        color: '#dff9fb',
-        fontSize: '1rem',
-        lineHeight: '1.5',
-        textAlign: 'left',
-        marginBottom: '1.5rem'
-      }}>
-        {member.description}
-      </p>
-
-      {/* Skills tags */}
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '0.5rem',
-        marginBottom: '1rem'
-      }}>
-        {member.skills.slice(0, 3).map(skill => (
-          <span key={skill} style={{
-            background: 'rgba(126, 214, 223, 0.2)',
-            color: '#7ed6df',
-            padding: '0.3rem 0.8rem',
-            borderRadius: '15px',
-            fontSize: '0.8rem',
-            fontWeight: '500'
-          }}>
-            {skill}
-          </span>
-        ))}
-      </div>
-
-      {/* Click indicator */}
-      <div style={{
-        fontSize: '0.9rem',
-        color: '#70a1ff',
-        fontWeight: 'bold',
-        opacity: isHovered ? 1 : 0.7,
-        transition: 'opacity 0.3s ease'
-      }}>
-        Click to view details →
       </div>
     </div>
   );
