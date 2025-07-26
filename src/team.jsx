@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Team.css';
 
 function Team() {
-  const [selectedMember, setSelectedMember] = useState(null);
-
   const teamMembers = [
     {
       image: "/assets/team/muthusenthil.jpg",
@@ -115,7 +113,7 @@ function Team() {
     {
       image: "/assets/team/Bala.jpg",
       title: "Balavignesh",
-      subtitle: "Platform Developer",
+      subtitle: "Tech Platform Developer",
       handle: "@balavignesh",
       borderColor: "#F97316",
       gradient: "linear-gradient(245deg, #F97316, #000)",
@@ -125,7 +123,7 @@ function Team() {
       skills: ["Development", "Platform Engineering"],
       projects: ["Platform Development"],
       level: "level3",
-      year: "2nd Year"
+      year: "3rd Year"
     },
     {
       image: "/assets/team/subhashree.jpg",
@@ -186,14 +184,14 @@ function Team() {
     {
       image: "/assets/team/suriyaprakash.jpg",
       title: "Suriyaprakash",
-      subtitle: "Outreach Volunteer",
+      subtitle: "Outreach Coordinator",
       handle: "@suriyaprakash",
       department: "AI & Data Science",
       description: "Creating user-friendly interfaces for AI applications.",
       skills: ["React", "JavaScript", "UI/UX"],
       projects: ["Web Development"],
       level: "level4",
-      year: "1st Year"
+      year: "2nd Year"
     }
   ];
 
@@ -217,7 +215,6 @@ function Team() {
               <TeamCard 
                 key={index} 
                 member={member} 
-                onClick={() => setSelectedMember(member)} 
               />
             ))}
           </div>
@@ -231,7 +228,6 @@ function Team() {
               <TeamCard 
                 key={index} 
                 member={member} 
-                onClick={() => setSelectedMember(member)} 
               />
             ))}
           </div>
@@ -245,12 +241,12 @@ function Team() {
               <TeamCard 
                 key={index} 
                 member={member} 
-                onClick={() => setSelectedMember(member)} 
               />
             ))}
           </div>
         </div>
 
+        {/* Core Members Section */}
         {/* Core Members Section */}
         <div className="section">
           <h5>out reach volunteers</h5>
@@ -259,7 +255,6 @@ function Team() {
               <TeamCard 
                 key={index} 
                 member={member} 
-                onClick={() => setSelectedMember(member)} 
               />
             ))}
           </div>
@@ -268,26 +263,18 @@ function Team() {
         {/* Join team section */}
         <JoinTeamSection />
       </div>
-
-      {/* Member detail modal */}
-      {selectedMember && (
-        <MemberModal 
-          member={selectedMember} 
-          onClose={() => setSelectedMember(null)} 
-        />
-      )}
     </section>
   );
 }
 
 // Team Card Component matching your HTML structure
-function TeamCard({ member, onClick }) {
+function TeamCard({ member }) {
   const cardStyle = {
     backgroundImage: `url(${member.image || "/assets/team/placeholder.jpg"})`
   };
   
   return (
-    <div className="card" onClick={onClick} style={cardStyle}>
+    <div className="card" style={cardStyle}>
       <div className="content">
         <div className="contentBx">
           <h3>
@@ -296,100 +283,10 @@ function TeamCard({ member, onClick }) {
             <span>{member.department}</span>
             <br />
             <span>{member.year}</span>
+            <br />
+            <span>{member.subtitle}</span>
           </h3>
         </div>
-      </div>
-    </div>
-  );
-}
-
-// Member detail modal
-function MemberModal({ member, onClose }) {
-  return (
-    <div 
-      className="modal-overlay"
-      onClick={onClose}
-    >
-      <div 
-        className="modal-content"
-        style={{
-          border: `2px solid ${member.borderColor || '#7ed6df'}`,
-          boxShadow: `0 25px 50px ${member.borderColor || '#7ed6df'}30`,
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="modal-header">
-          <div 
-            className="modal-avatar"
-            style={{ border: `3px solid ${member.borderColor || '#7ed6df'}` }}
-          >
-            <img 
-              src={member.image} 
-              alt={member.title}
-            />
-          </div>
-          
-          <h2 
-            className="modal-name"
-            style={{ color: member.borderColor || '#7ed6df' }}
-          >
-            {member.title}
-          </h2>
-          
-          <div className="modal-subtitle">
-            {member.subtitle}
-          </div>
-
-          <div className="modal-handle">
-            {member.handle}
-          </div>
-        </div>
-
-        <div className="modal-body">
-          <p className="modal-description">
-            {member.description}
-          </p>
-
-          <h3 
-            className="modal-section-title"
-            style={{ color: member.borderColor || '#7ed6df' }}
-          >
-            Skills & Expertise
-          </h3>
-          <div className="modal-skills">
-            {member.skills.map(skill => (
-              <span 
-                key={skill} 
-                className="modal-skill-tag"
-                style={{ background: member.borderColor || '#7ed6df' }}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-
-          <h3 
-            className="modal-section-title"
-            style={{ color: member.borderColor || '#7ed6df' }}
-          >
-            Current Projects
-          </h3>
-          <ul className="modal-projects">
-            {member.projects.map(project => (
-              <li key={project}>{project}</li>
-            ))}
-          </ul>
-        </div>
-
-        <button 
-          onClick={onClose} 
-          className="modal-close-btn"
-          style={{
-            background: `linear-gradient(45deg, ${member.borderColor || '#7ed6df'}, ${member.borderColor || '#70a1ff'})`,
-          }}
-        >
-          Close
-        </button>
       </div>
     </div>
   );

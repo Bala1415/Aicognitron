@@ -110,7 +110,7 @@ function App() {
           </a>
           
           <a 
-            href="https://www.linkedin.com/company/cognitron-ai"
+            href="https://www.linkedin.com/in/cognitron-technical-club-of-ai-b65512376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noopener noreferrer"
             style={{

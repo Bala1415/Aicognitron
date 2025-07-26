@@ -1133,4 +1133,5 @@ const Hyperspeed = ({ effectOptions = {
   );
 }
 
+
 export default Hyperspeed;
