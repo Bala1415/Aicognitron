@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Team.css';
 
 function Team() {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -211,299 +212,79 @@ function Team() {
   const coreMembers = teamMembers.filter(member => member.level === "level4");
 
   return (
-    <>
-      <style>{`
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-          overflow-x: hidden;
-          background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-          min-height: 100vh;
-        }
-        
-        .team-section {
-          max-width: 100vw;
-          overflow-x: hidden;
-          background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-          min-height: 100vh;
-          padding: 2rem 0;
-        }
-        
-        /* Ensure navbar stays fixed */
-        nav {
-          position: fixed !important;
-          top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          z-index: 1000 !important;
-        }
-
-        .wrapper {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          padding: 4rem 2rem 2rem;
-        }
-
-        .title {
-          text-align: center;
-          margin-bottom: 3rem;
-        }
-
-        .title h4 {
-          position: relative;
-          display: inline-block;
-          padding: 15px;
-          color: #ffffff;
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 500;
-          letter-spacing: 1.2px;
-          word-spacing: 5px;
-          text-transform: uppercase;
-          background: linear-gradient(45deg, #7ed6df, #70a1ff, #ff6b6b);
-          background-size: 300% 300%;
-          animation: gradientShift 3s ease infinite;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          backdrop-filter: blur(15px);
-          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .section {
-          margin: 40px 0;
-          width: 100%;
-          max-width: 1200px;
-        }
-
-        .section h5 {
-          text-align: center;
-          color: #ffffff;
-          font-size: clamp(1.8rem, 3vw, 2.5rem);
-          font-weight: 500;
-          margin-bottom: 30px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-        }
-
-        .card_Container {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 30px;
-          margin: 40px 0;
-        }
-
-        .card {
-          position: relative;
-          width: 250px;
-          height: 300px;
-          overflow: hidden;
-          box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.8),
-                      inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
-          border-radius: 15px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          background: linear-gradient(135deg, rgba(126, 214, 223, 0.1), rgba(112, 161, 255, 0.1));
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .card:hover {
-          transform: translateY(-10px) scale(1.02);
-          box-shadow: 0 40px 40px -20px rgba(126, 214, 223, 0.3);
-        }
-
-        .card .imgBx {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .card .imgBx img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .card:hover .imgBx img {
-          transform: scale(1.1);
-        }
-
-        .card .content {
-          position: absolute;
-          bottom: -160px;
-          width: 100%;
-          height: 160px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          backdrop-filter: blur(15px);
-          background: rgba(0, 0, 0, 0.7);
-          box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 15px 15px 0 0;
-          transition: bottom 0.5s ease;
-          transition-delay: 0.65s;
-        }
-
-        .card:hover .content {
-          bottom: 0;
-          transition-delay: 0ms;
-        }
-
-        .content .contentBx h3 {
-          text-transform: uppercase;
-          color: #fff;
-          letter-spacing: 1px;
-          font-weight: 500;
-          font-size: 16px;
-          text-align: center;
-          margin: 20px 0 15px;
-          line-height: 1.2em;
-          transition: 0.5s;
-          transition-delay: 0.6s;
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-
-        .card:hover .content .contentBx h3 {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .content .contentBx h3 span {
-          font-size: 12px;
-          font-weight: 300;
-          text-transform: initial;
-          color: #7ed6df;
-        }
-
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-          .card_Container {
-            flex-direction: column;
-            align-items: center;
-          }
-          
-          .card {
-            width: 280px;
-            height: 320px;
-          }
-          
-          .section h5 {
-            font-size: 1.5rem;
-          }
-          
-          .title h4 {
-            font-size: 2rem;
-          }
-        }
-
-        /* Reduce motion for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-      `}</style>
-      
-      <section className="team-section">
-        <div className="wrapper">
-          <div className="title">
-            <h4>AICOGNITRON</h4>
-          </div>
-
-          {/* Faculty Section */}
-          <div className="section">
-            <div className="card_Container">
-              {facultyMembers.map((member, index) => (
-                <TeamCard 
-                  key={index} 
-                  member={member} 
-                  onClick={() => setSelectedMember(member)} 
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Senior Leads Section */}
-          <div className="section">
-            <h5>cooordinators</h5>
-            <div className="card_Container">
-              {seniorLeads.map((member, index) => (
-                <TeamCard 
-                  key={index} 
-                  member={member} 
-                  onClick={() => setSelectedMember(member)} 
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Team Leads Section */}
-          <div className="section">
-             
-            <div className="card_Container">
-              {teamLeads.map((member, index) => (
-                <TeamCard 
-                  key={index} 
-                  member={member} 
-                  onClick={() => setSelectedMember(member)} 
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Core Members Section */}
-          <div className="section">
-            <h5>out reach volunteers</h5>
-            <div className="card_Container">
-              {coreMembers.map((member, index) => (
-                <TeamCard 
-                  key={index} 
-                  member={member} 
-                  onClick={() => setSelectedMember(member)} 
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Join team section */}
-          <JoinTeamSection />
+    <section className="team-section">
+      <div className="wrapper">
+        <div className="title">
+          <h4>AICOGNITRON</h4>
         </div>
 
-        {/* Member detail modal */}
-        {selectedMember && (
-          <MemberModal 
-            member={selectedMember} 
-            onClose={() => setSelectedMember(null)} 
-          />
-        )}
-      </section>
-    </>
+        {/* Faculty Section */}
+        <div className="section">
+          <div className="card_Container">
+            {facultyMembers.map((member, index) => (
+              <TeamCard 
+                key={index} 
+                member={member} 
+                onClick={() => setSelectedMember(member)} 
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Senior Leads Section */}
+        <div className="section">
+          <h5>cooordinators</h5>
+          <div className="card_Container">
+            {seniorLeads.map((member, index) => (
+              <TeamCard 
+                key={index} 
+                member={member} 
+                onClick={() => setSelectedMember(member)} 
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Team Leads Section */}
+        <div className="section">
+           
+          <div className="card_Container">
+            {teamLeads.map((member, index) => (
+              <TeamCard 
+                key={index} 
+                member={member} 
+                onClick={() => setSelectedMember(member)} 
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Core Members Section */}
+        <div className="section">
+          <h5>out reach volunteers</h5>
+          <div className="card_Container">
+            {coreMembers.map((member, index) => (
+              <TeamCard 
+                key={index} 
+                member={member} 
+                onClick={() => setSelectedMember(member)} 
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Join team section */}
+        <JoinTeamSection />
+      </div>
+
+      {/* Member detail modal */}
+      {selectedMember && (
+        <MemberModal 
+          member={selectedMember} 
+          onClose={() => setSelectedMember(null)} 
+        />
+      )}
+    </section>
   );
 }
 
@@ -538,128 +319,88 @@ function TeamCard({ member, onClick }) {
 // Member detail modal
 function MemberModal({ member, onClose }) {
   return (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'rgba(0, 0, 0, 0.8)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      zIndex: 9999,
-      padding: '2rem'
-    }}
-    onClick={onClose}
+    <div 
+      className="modal-overlay"
+      onClick={onClose}
     >
-      <div style={{
-        background: 'linear-gradient(135deg, rgba(35, 37, 38, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%)',
-        borderRadius: '25px',
-        padding: '3rem',
-        maxWidth: '600px',
-        width: '100%',
-        border: `2px solid ${member.borderColor || '#7ed6df'}`,
-        boxShadow: `0 25px 50px ${member.borderColor || '#7ed6df'}30`,
-        animation: 'slideUp 0.3s ease-out'
-      }}
-      onClick={(e) => e.stopPropagation()}
+      <div 
+        className="modal-content"
+        style={{
+          border: `2px solid ${member.borderColor || '#7ed6df'}`,
+          boxShadow: `0 25px 50px ${member.borderColor || '#7ed6df'}30`,
+        }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ 
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            overflow: 'hidden',
-            margin: '0 auto 1rem',
-            border: `3px solid ${member.borderColor || '#7ed6df'}`
-          }}>
+        <div className="modal-header">
+          <div 
+            className="modal-avatar"
+            style={{ border: `3px solid ${member.borderColor || '#7ed6df'}` }}
+          >
             <img 
               src={member.image} 
               alt={member.title}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }}
             />
           </div>
           
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            color: member.borderColor || '#7ed6df',
-            marginBottom: '0.5rem'
-          }}>
+          <h2 
+            className="modal-name"
+            style={{ color: member.borderColor || '#7ed6df' }}
+          >
             {member.title}
           </h2>
           
-          <div style={{
-            fontSize: '1.4rem',
-            color: '#70a1ff',
-            fontWeight: '600',
-            marginBottom: '0.5rem'
-          }}>
+          <div className="modal-subtitle">
             {member.subtitle}
           </div>
 
-          <div style={{
-            fontSize: '1rem',
-            color: '#aaa',
-            fontStyle: 'italic',
-            marginBottom: '2rem'
-          }}>
+          <div className="modal-handle">
             {member.handle}
           </div>
         </div>
 
-        <div style={{ textAlign: 'left' }}>
-          <p style={{
-            color: '#dff9fb',
-            fontSize: '1.1rem',
-            lineHeight: '1.6',
-            marginBottom: '2rem',
-            textAlign: 'center'
-          }}>
+        <div className="modal-body">
+          <p className="modal-description">
             {member.description}
           </p>
 
-          <h3 style={{ color: member.borderColor || '#7ed6df', marginBottom: '1rem' }}>Skills & Expertise</h3>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
+          <h3 
+            className="modal-section-title"
+            style={{ color: member.borderColor || '#7ed6df' }}
+          >
+            Skills & Expertise
+          </h3>
+          <div className="modal-skills">
             {member.skills.map(skill => (
-              <span key={skill} style={{
-                background: member.borderColor || '#7ed6df',
-                color: '#000',
-                padding: '0.5rem 1rem',
-                borderRadius: '20px',
-                fontSize: '0.9rem',
-                fontWeight: 'bold'
-              }}>
+              <span 
+                key={skill} 
+                className="modal-skill-tag"
+                style={{ background: member.borderColor || '#7ed6df' }}
+              >
                 {skill}
               </span>
             ))}
           </div>
 
-          <h3 style={{ color: member.borderColor || '#7ed6df', marginBottom: '1rem' }}>Current Projects</h3>
-          <ul style={{ color: '#dff9fb', marginBottom: '2rem', paddingLeft: '1.5rem' }}>
+          <h3 
+            className="modal-section-title"
+            style={{ color: member.borderColor || '#7ed6df' }}
+          >
+            Current Projects
+          </h3>
+          <ul className="modal-projects">
             {member.projects.map(project => (
-              <li key={project} style={{ marginBottom: '0.5rem' }}>{project}</li>
+              <li key={project}>{project}</li>
             ))}
           </ul>
         </div>
 
-        <button onClick={onClose} style={{
-          background: `linear-gradient(45deg, ${member.borderColor || '#7ed6df'}, ${member.borderColor || '#70a1ff'})`,
-          color: '#000',
-          border: 'none',
-          padding: '1rem 2rem',
-          borderRadius: '25px',
-          fontSize: '1.1rem',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          width: '100%',
-          transition: 'all 0.3s ease'
-        }}>
+        <button 
+          onClick={onClose} 
+          className="modal-close-btn"
+          style={{
+            background: `linear-gradient(45deg, ${member.borderColor || '#7ed6df'}, ${member.borderColor || '#70a1ff'})`,
+          }}
+        >
           Close
         </button>
       </div>
@@ -670,73 +411,27 @@ function MemberModal({ member, onClose }) {
 // Join team section
 function JoinTeamSection() {
   return (
-    <div style={{
-      background: 'linear-gradient(135deg, rgba(126, 214, 223, 0.1) 0%, rgba(112, 161, 255, 0.1) 100%)',
-      borderRadius: '25px',
-      padding: '3rem',
-      border: '2px solid rgba(126, 214, 223, 0.3)',
-      marginTop: '3rem',
-      textAlign: 'center'
-    }}>
-      <h3 style={{
-        fontSize: '2rem',
-        fontWeight: 'bold',
-        background: 'linear-gradient(45deg, #7ed6df, #70a1ff)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-        marginBottom: '1rem'
-      }}>
+    <div className="join-team-section">
+      <h3 className="join-team-title">
         Join Our Amazing Team! 🌟
       </h3>
       
-      <p style={{
-        color: '#dff9fb',
-        fontSize: '1.2rem',
-        lineHeight: '1.6',
-        maxWidth: '600px',
-        margin: '0 auto 2rem'
-      }}>
+      <p className="join-team-description">
         Ready to shape the future of AI? We're always looking for passionate individuals 
         to join our mission and make a real impact in the tech world.
       </p>
 
-      <div style={{
-        display: 'flex',
-        gap: '1rem',
-        justifyContent: 'center',
-        flexWrap: 'wrap'
-      }}>
-        <button style={{
-          background: 'linear-gradient(45deg, #7ed6df, #70a1ff)',
-          color: '#000',
-          border: 'none',
-          padding: '1rem 2rem',
-          borderRadius: '25px',
-          fontSize: '1.1rem',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          textTransform: 'uppercase'
-        }}
-        onClick={() => alert('Applications opening soon! 🚀')}
+      <div className="join-team-buttons">
+        <button 
+          className="join-team-btn-primary"
+          onClick={() => alert('Applications opening soon! 🚀')}
         >
           🚀 Apply Now
         </button>
         
-        <button style={{
-          background: 'transparent',
-          color: '#7ed6df',
-          border: '2px solid #7ed6df',
-          padding: '1rem 2rem',
-          borderRadius: '25px',
-          fontSize: '1.1rem',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          textTransform: 'uppercase'
-        }}
-        onClick={() => alert('Check out our ongoing projects! 💡')}
+        <button 
+          className="join-team-btn-secondary"
+          onClick={() => alert('Check out our ongoing projects! 💡')}
         >
           💡 Learn More
         </button>
