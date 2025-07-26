@@ -16,6 +16,34 @@ const Navbar = ({ section, setSection, sections }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle URL changes and persist section in URL
+  useEffect(() => {
+    // Get section from URL hash on component mount
+    const hash = window.location.hash.replace('#', '');
+    if (hash && sections.some(s => s.key === hash)) {
+      setSection(hash);
+    }
+  }, [setSection, sections]);
+
+  // Update URL when section changes
+  useEffect(() => {
+    if (section && section !== 'home') {
+      window.history.replaceState(null, null, `#${section}`);
+    } else {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  }, [section]);
+
+  const handleSectionChange = (newSection) => {
+    setSection(newSection);
+    // Update URL immediately
+    if (newSection && newSection !== 'home') {
+      window.history.pushState(null, null, `#${newSection}`);
+    } else {
+      window.history.pushState(null, null, window.location.pathname);
+    }
+  };
+
   return (
     <nav className="glass" style={{
       position: 'fixed',
@@ -39,7 +67,7 @@ const Navbar = ({ section, setSection, sections }) => {
         alignItems: 'center',
         gap: '0.7rem',
         cursor: 'pointer',
-      }} onClick={() => setSection('home')}>
+      }} onClick={() => handleSectionChange('home')}>
         {/* Use <img> for logo */}
         <img
           src={CognitronLogo}
@@ -62,7 +90,7 @@ const Navbar = ({ section, setSection, sections }) => {
           letterSpacing: '2px',
           fontFamily: 'JetBrains Mono, monospace',
           textShadow: '0 2px 12px #6c63ff44',
-        }}>COGNITRON</span>
+        }}>AICOGNITRON</span>
       </div>
       {/* Desktop Navigation */}
       <div className="navbar-desktop" style={{
@@ -74,7 +102,7 @@ const Navbar = ({ section, setSection, sections }) => {
           <NavButton
             key={key}
             isActive={section === key}
-            onClick={() => setSection(key)}
+            onClick={() => handleSectionChange(key)}
             delay={index * 0.1}
             scrolled={scrolled}
           >
@@ -134,7 +162,7 @@ const Navbar = ({ section, setSection, sections }) => {
                 key={key}
                 isActive={section === key}
                 onClick={() => {
-                  setSection(key);
+                  handleSectionChange(key);
                   setMobileMenuOpen(false);
                 }}
                 delay={index * 0.1}
