@@ -86,26 +86,53 @@ body {
 .upcoming-events {
     position: relative;
     background: rgba(24, 24, 32, 0.92);
-    margin: 50px;
+    margin: 50px auto;
+    max-width: 90%;
     box-shadow: 0 4px 32px #000a, 0 0 0 2px #60a5fa33;
-    border-radius: 2.5cm;
-    padding: 15%;
+    border-radius: 25px;
+    padding: 2rem;
     font-family: 'Times New Roman', Times, serif;
-
-  }
-  
-.top-card{
-    color: #60a5fa;
-    position:absolute;
-
-
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
-.date {
-    position: absolute;
-    top: 3.5rem;
-    right: 3rem;
+  
+.top-card {
+    color: #60a5fa;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-weight: 600;
     margin: 0;
-    font-size: 2rem;
-    z-index: 4;
-    /* Ensure it is only positioned relative to the card */
+    text-shadow: 0 2px 12px #000, 0 0 8px #60a5fa55;
+    line-height: 1.4;
+    max-width: 100%;
+}
+
+.date {
+    color: #f7c873;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 12px #000, 0 0 8px #f7c87399;
+    letter-spacing: 1px;
+}
+
+/* Mobile responsive for events section */
+@media (max-width: 768px) {
+    .upcoming-events {
+        margin: 30px auto;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .top-card {
+        font-size: 1.1rem;
+    }
+    
+    .date {
+        font-size: 1.3rem;
+    }
 }
