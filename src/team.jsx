@@ -67,7 +67,7 @@ function Team() {
       year: "4th Year"
     },
     {
-      image: "/assets/team/aakash.jpg",
+      image: "/assets/team/akash.jpeg",
       title: "Aakash",
       subtitle: "Technical Head",
       handle: "@aakash",
@@ -82,7 +82,7 @@ function Team() {
       year: "4th Year"
     },
     {
-      image: "/assets/team/sethumadhavan.jpg",
+      image: "/assets/team/sedhumadavan.jpg",
       title: "Sethumadhavan",
       subtitle: "Chief Technical Officer",
       handle: "@sethu",
@@ -98,7 +98,7 @@ function Team() {
     },
     // Level 3 - Team Leads
     {
-      image: "/assets/team/kavirajan.jpg",
+      image: "/assets/team/kavi.jpg",
       title: "Kavirajan",
       subtitle: "Tech Innovate Lead",
       handle: "@kavirajan",
@@ -113,7 +113,7 @@ function Team() {
       year: "3rd Year"
     },
     {
-      image: "/assets/team/balavignesh.jpg",
+      image: "/assets/team/Bala.jpg",
       title: "Balavignesh",
       subtitle: "Platform Developer",
       handle: "@balavignesh",
@@ -128,8 +128,8 @@ function Team() {
       year: "2nd Year"
     },
     {
-      image: "/assets/team/subha.jpg",
-      title: "Subha",
+      image: "/assets/team/subhashree.jpg",
+      title: "SubhaShree",
       subtitle: "Tech Content Curator",
       handle: "@subha",
       borderColor: "#84CC16",
@@ -144,12 +144,10 @@ function Team() {
     },
     // Level 4 - Core Members
     {
-      image: "/assets/team/johndoe.jpg",
-      title: "John Doe",
-      subtitle: "AI Researcher",
-      handle: "@johndoe",
-      borderColor: "#FFBB33",
-      gradient: "linear-gradient(120deg, #FFBB33, #000)",
+      image: "/assets/team/shakti.jpg",
+      title: "Shakti",
+      subtitle: "Outreach Coordinator",
+      handle: "@shakti",
       url: "https://linkedin.com/in/",
       department: "AI & Data Science",
       description: "Research and development in AI technologies.",
@@ -159,25 +157,22 @@ function Team() {
       year: "2nd Year"
     },
     {
-      image: "/assets/team/janesmith.jpg",
-      title: "Jane Smith",
-      subtitle: "Data Scientist",
+      image: "/assets/team/MaheswariS.jpg",
+      title: "Maheswari S",
+      subtitle: "Outreach Coordinator",
       handle: "@janesmith",
-      borderColor: "#FF5733",
-      gradient: "linear-gradient(120deg, #FF5733, #000)",
       url: "https://linkedin.com/in/",
       department: "AI & Data Science",
-      description: "Data analysis and visualization expert.",
       skills: ["Data Science", "Analytics"],
       projects: ["Data Projects"],
       level: "level4",
       year: "2nd Year"
     },
     {
-      image: "/assets/team/alex.jpg",
-      title: "Alex Kumar",
-      subtitle: "ML Engineer",
-      handle: "@alexkumar",
+      image: "/assets/team/elavarasan.jpg",
+      title: "Elavarasan",
+      subtitle: "Outreach Coordinator",
+      handle: "@elavarasan",
       borderColor: "#9C27B0",
       gradient: "linear-gradient(120deg, #9C27B0, #000)",
       url: "https://github.com/",
@@ -189,13 +184,10 @@ function Team() {
       year: "2nd Year"
     },
     {
-      image: "/assets/team/sara.jpg",
-      title: "Sara Patel",
-      subtitle: "Frontend Developer",
-      handle: "@sarapatel",
-      borderColor: "#00BCD4",
-      gradient: "linear-gradient(120deg, #00BCD4, #000)",
-      url: "https://portfolio.com/",
+      image: "/assets/team/suriyaprakash.jpg",
+      title: "Suriyaprakash",
+      subtitle: "Outreach Volunteer",
+      handle: "@suriyaprakash",
       department: "AI & Data Science",
       description: "Creating user-friendly interfaces for AI applications.",
       skills: ["React", "JavaScript", "UI/UX"],
