@@ -290,17 +290,12 @@ function Team() {
 
 // Team Card Component matching your HTML structure
 function TeamCard({ member, onClick }) {
+  const cardStyle = {
+    backgroundImage: `url(${member.image || "/assets/team/placeholder.jpg"})`
+  };
+  
   return (
-    <div className="card" onClick={onClick}>
-      <div className="imbBx">
-        <img 
-          src={member.image || "/assets/team/placeholder.jpg"} 
-          alt={member.title}
-          onError={(e) => {
-            e.target.src = "/assets/team/placeholder.jpg";
-          }}
-        />
-      </div>
+    <div className="card" onClick={onClick} style={cardStyle}>
       <div className="content">
         <div className="contentBx">
           <h3>
