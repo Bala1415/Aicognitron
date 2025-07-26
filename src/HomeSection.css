@@ -56,4 +56,56 @@ body {
   }
 } 
 
-.hod-message
+.hod-message {
+    background: rgba(75, 75, 204, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #000a, 0 0 0 2px #60a5fa33;
+    padding: 2rem 1.5rem;
+    margin: 2.5rem auto 0;
+    max-width: 100dvw;
+    text-align: center;
+    color: #e0e7ef;
+  }
+  .hod-title {
+    font-size: 2rem;
+    color: #60a5fa;
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', 'Fira Mono', Georgia, serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px #000, 0 0 8px #60a5fa55;
+  }
+  .hod-text {
+    font-size: 1.15rem;
+    color: #b5e0ff;
+    line-height: 1.7;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    text-shadow: 0 1px 6px #000, 0 0 4px #60a5fa22;
+  }
+
+.upcoming-events {
+    position: relative;
+    background: rgba(24, 24, 32, 0.92);
+    margin: 50px;
+    box-shadow: 0 4px 32px #000a, 0 0 0 2px #60a5fa33;
+    border-radius: 2.5cm;
+    padding: 15%;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+  
+.top-card{
+    color: #60a5fa;
+    position:absolute;
+
+
+}
+.date {
+    position: absolute;
+    top: 3.5rem;
+    right: 3rem;
+    margin: 0;
+    font-size: 2rem;
+    z-index: 4;
+    /* Ensure it is only positioned relative to the card */
+}

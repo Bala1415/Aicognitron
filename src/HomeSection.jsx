@@ -69,40 +69,18 @@ function HomeSection() {
             Welcome to the AI Cognitron Club! We are committed to fostering innovation, collaboration, and excellence in the field of Artificial Intelligence and Data Science. Join us as we explore the frontiers of technology together.
           </p>
         </div>
-        {/* 
-          How to add CSS for this:
-          1. Open your 'src/HomeSection.css' file.
-          2. Add the following styles at the end of the file:
+        
+      </section>
 
-          .hod-message {
-            background: rgba(24, 24, 32, 0.92);
-            border-radius: 18px;
-            box-shadow: 0 4px 32px #000a, 0 0 0 2px #60a5fa33;
-            padding: 2rem 1.5rem;
-            margin: 2.5rem auto 0;
-            max-width: 600px;
-            text-align: center;
-            color: #e0e7ef;
-          }
-          .hod-title {
-            font-size: 2rem;
-            color: #60a5fa;
-            margin-bottom: 1rem;
-            font-family: 'JetBrains Mono', 'Fira Mono', Georgia, serif;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 12px #000, 0 0 8px #60a5fa55;
-          }
-          .hod-text {
-            font-size: 1.15rem;
-            color: #b5e0ff;
-            line-height: 1.7;
-            font-family: 'IBM Plex Sans', Arial, sans-serif;
-            text-shadow: 0 1px 6px #000, 0 0 4px #60a5fa22;
-          }
 
-          3. Save the CSS file. The styles will automatically apply to this section.
-        */}
+      <section >
+        <div className='upcoming-events'>
+          <h1 className='date'>Date:  30/08/2025</h1>
+            <h2 className='top-card'>Essay writing on the standards of the products</h2>
+            
+        </div>
+
+
       </section>
     </>
   );
