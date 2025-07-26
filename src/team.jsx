@@ -20,7 +20,7 @@ function Team() {
       year: "Faculty"
     },
     {
-      image: "public/assets/team/Abinaya.jpg",
+      image: "assets/team/Abinaya.jpg",
       title: "Ms.Abinaya",
       subtitle: "Staff",
       handle: "@abinaya",
@@ -51,7 +51,7 @@ function Team() {
     },
     // Level 2 - cooordinators  
     {
-      image: "public/assets/team/pavithran.jpg",
+      image: "assets/team/pavithran.jpg",
       title: "Pavithran",
       subtitle: "Technical Program Manager",
       handle: "@pavithran",
