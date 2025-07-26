@@ -36,7 +36,7 @@ function Team() {
       year: "Faculty"
     },
     {
-      image: "/assets/team/subhree.jpg",
+      image: "/assets/team/sherlin.jpg",
       title: "Ms.Sherlin Sherly",
       subtitle: "Staff",
       handle: "@sherlinsherly",
@@ -292,7 +292,7 @@ function Team() {
 function TeamCard({ member, onClick }) {
   return (
     <div className="card" onClick={onClick}>
-      <div className="imgBx">
+      <div className="imbBx">
         <img 
           src={member.image || "/assets/team/placeholder.jpg"} 
           alt={member.title}
