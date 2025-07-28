@@ -19,6 +19,12 @@ function HomeSection() {
     }
   }, []);
 
+  // Button click handler
+  const handleRegisterClick = () => {
+    // Example: redirect to registration page
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSd6PC3TcpE1YPLDZ9HDRpex3OWP5Yc-JyFNffaVxPnbecoXcw/viewform?usp=sharing&ouid=109360866723180095098', '_blank');
+  };
+
   return (
     <>
       <section id="home" className="home-section">
@@ -172,15 +178,12 @@ function HomeSection() {
         
       </section>
 
-
       <section >
         <div className='upcoming-events'>
           <h1 className='date'>Date:  30/07/2025</h1>
             <h2 className='top-card'>BIS Standard Writing</h2>
-
+            <button className='button' onClick={handleRegisterClick}>Register now!</button>
         </div>
-
-
       </section>
     </>
   );

@@ -136,3 +136,15 @@ body {
         font-size: 1.3rem;
     }
 }
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: #ffffff;
+  background: linear-gradient(45deg, #7ed6df, #70a1ff, #ff6b6b);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
