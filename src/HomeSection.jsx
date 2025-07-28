@@ -175,9 +175,9 @@ function HomeSection() {
 
       <section >
         <div className='upcoming-events'>
-          <h1 className='date'>Date:  30/08/2025</h1>
-            <h2 className='top-card'>Essay writing on the standards of the products</h2>
-            
+          <h1 className='date'>Date:  30/07/2025</h1>
+            <h2 className='top-card'>BIS Standard Writing</h2>
+
         </div>
 
 
