@@ -21,7 +21,7 @@ function Team() {
     {
       image: "assets/team/Abinaya.jpg",
       title: "Ms.Abinaya",
-      subtitle: "Staff",
+      subtitle: "Technical Affairs Director",
       handle: "@abinaya",
       borderColor: "#10B981",
       gradient: "linear-gradient(210deg, #10B981, #000)",
@@ -52,7 +52,7 @@ function Team() {
     {
       image: "assets/team/pavithran.jpg",
       title: "Pavithran",
-      subtitle: "Technical Program Manager",
+      subtitle: "Technical Director",
       handle: "@pavithran",
       borderColor: "#EF4444",
       gradient: "linear-gradient(195deg, #EF4444, #000)",
@@ -113,7 +113,7 @@ function Team() {
     {
       image: "/assets/team/Bala.jpg",
       title: "Balavignesh",
-      subtitle: "Tech Platform Developer",
+      subtitle: "Tech Developer",
       handle: "@balavignesh",
       borderColor: "#F97316",
       gradient: "linear-gradient(245deg, #F97316, #000)",
@@ -182,8 +182,8 @@ function Team() {
       year: "2nd Year"
     },
     {
-      image: "/assets/team/suriyaprakash.jpg",
-      title: "Suriyaprakash",
+      image: "/assets/team/suryaprakash.jpg",
+      title: "Suryaprakash",
       subtitle: "Outreach Coordinator",
       handle: "@suriyaprakash",
       department: "AI & Data Science",
