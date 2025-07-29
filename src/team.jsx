@@ -143,7 +143,7 @@ function Team() {
     // Level 4 - Core Members
     {
       image: "/assets/team/shakti.jpg",
-      title: "Shakti",
+      title: "Sakthivel",
       subtitle: "Outreach Coordinator",
       handle: "@shakti",
       url: "https://linkedin.com/in/",
