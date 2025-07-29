@@ -181,6 +181,56 @@ nav {
   text-align: center;
 }
 
+/* Team Members List Styles */
+.team-members-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.member-name-item {
+  background: linear-gradient(135deg, rgba(126, 214, 223, 0.1) 0%, rgba(112, 161, 255, 0.1) 100%);
+  border: 1px solid rgba(126, 214, 223, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.member-name-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(126, 214, 223, 0.2);
+  border-color: rgba(126, 214, 223, 0.5);
+}
+
+/* Mobile Responsiveness for Team Members List */
+@media (max-width: 768px) {
+  .team-members-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .member-name-item {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+  .team-members-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .join-team-title {
   font-size: 2rem;
   font-weight: bold;

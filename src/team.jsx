@@ -260,8 +260,62 @@ function Team() {
           </div>
         </div>
 
+        {/* All Team Members List */}
+        <div className="section">
+          <h5>All Team Members</h5>
+          <div className="team-members-list">
+            <div className="member-name-item">Annet.A</div>
+            <div className="member-name-item">Avantika A D</div>
+            <div className="member-name-item">Jeevadharshini T</div>
+            <div className="member-name-item">Ovija S</div>
+            <div className="member-name-item">G.M.Sevita</div>
+            <div className="member-name-item">Loshini D</div>
+            <div className="member-name-item">Divya Dharshini V</div>
+            <div className="member-name-item">PrasannaRaj.S</div>
+            <div className="member-name-item">Thudhin.N.S</div>
+            <div className="member-name-item">Jovina M</div>
+            <div className="member-name-item">Lokesh.G</div>
+            <div className="member-name-item">Ragul.M</div>
+            <div className="member-name-item">Ram Sundar.S</div>
+            <div className="member-name-item">Naveen P</div>
+            <div className="member-name-item">N.Mukesh</div>
+            <div className="member-name-item">Dhivya S.S</div>
+            <div className="member-name-item">Kritthika.S</div>
+            <div className="member-name-item">T.Sathiya</div>
+            <div className="member-name-item">N.Premkumar</div>
+            <div className="member-name-item">Savishnu.L</div>
+            <div className="member-name-item">Varma .N</div>
+            <div className="member-name-item">K. Subhashree</div>
+            <div className="member-name-item">E. Kavirajan</div>
+            <div className="member-name-item">Balavignesh A.U.</div>
+            <div className="member-name-item">Vijayvarshan.A</div>
+            <div className="member-name-item">S.Srinath</div>
+            <div className="member-name-item">Jijesh Raj.K</div>
+            <div className="member-name-item">Ashwin.M</div>
+            <div className="member-name-item">v.Manoj</div>
+            <div className="member-name-item">Jack.M</div>
+            <div className="member-name-item">Saiful Azman.M</div>
+            <div className="member-name-item">N. Sanjai</div>
+            <div className="member-name-item">Ragul.S</div>
+            <div className="member-name-item">Aadhitya Arunachalam.A</div>
+            <div className="member-name-item">Surendhiran.S</div>
+            <div className="member-name-item">S.Ramakrishnan</div>
+            <div className="member-name-item">P.Rohan Raaj</div>
+            <div className="member-name-item">D.Keerthivasan</div>
+            <div className="member-name-item">K.A.Viroshan</div>
+            <div className="member-name-item">G.Sudharsan</div>
+            <div className="member-name-item">P.Aswin Kumar</div>
+            <div className="member-name-item">B.Arun Karthick</div>
+            <div className="member-name-item">D.Murugavelrajan</div>
+            <div className="member-name-item">D.Varshanth</div>
+            <div className="member-name-item">Saran</div>
+            <div className="member-name-item">A.Mohamed Naveed</div>
+            <div className="member-name-item">Amuthapriyan.A.M</div>
+          </div>
+        </div>
+
         {/* Join team section */}
-        <JoinTeamSection />
+  
       </div>
     </section>
   );
@@ -287,38 +341,6 @@ function TeamCard({ member }) {
             <span>{member.subtitle}</span>
           </h3>
         </div>
-      </div>
-    </div>
-  );
-}
-
-// Join team section
-function JoinTeamSection() {
-  return (
-    <div className="join-team-section">
-      <h3 className="join-team-title">
-        Join Our Amazing Team! 🌟
-      </h3>
-      
-      <p className="join-team-description">
-        Ready to shape the future of AI? We're always looking for passionate individuals 
-        to join our mission and make a real impact in the tech world.
-      </p>
-
-      <div className="join-team-buttons">
-        <button 
-          className="join-team-btn-primary"
-          onClick={() => alert('Applications opening soon! 🚀')}
-        >
-          🚀 Apply Now
-        </button>
-        
-        <button 
-          className="join-team-btn-secondary"
-          onClick={() => alert('Check out our ongoing projects! 💡')}
-        >
-          💡 Learn More
-        </button>
       </div>
     </div>
   );
