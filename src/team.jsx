@@ -4,7 +4,7 @@ import './Team.css';
 function Team() {
   const teamMembers = [
     {
-      image: "/assets/team/hodC.jpg",
+      image: "/assets/team/hod.jpg",
       title: "Dr.Muthusenthil",
       subtitle: "Head of the Department",
       handle: "@muthusenthil",
