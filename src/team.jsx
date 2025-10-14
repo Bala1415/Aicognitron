@@ -51,7 +51,7 @@ function Team() {
     // Level 2 - cooordinators  
     {
       image: "assets/team/pavithran.jpg",
-      title: "Pavithran",
+      title: "Pavithran P.K",
       subtitle: "Technical Director",
       handle: "@pavithran",
       borderColor: "#EF4444",
