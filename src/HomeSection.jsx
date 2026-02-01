@@ -22,7 +22,7 @@ function HomeSection() {
   // Button click handler
   const handleRegisterClick = () => {
     // Example: redirect to registration page
-    window.open('https://forms.gle/G7BK99tZSQqZxFYj8', '_blank');
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGGYOBOUBDjy-eqMmbfWZQExQpw95HVYZSYdyGDVNEZT4wUA/viewform?usp=dialog', '_blank');
   };
 
   return (
@@ -233,7 +233,7 @@ function HomeSection() {
                   textTransform: 'uppercase',
                   letterSpacing: '1px'
                 }}>
-                  Date: 22/10/2025
+                  Date: 04/02/2026 
                 </div>
                 
                 <h2 style={{
@@ -246,7 +246,7 @@ function HomeSection() {
                   fontWeight: 'bold',
                   lineHeight: '1.2'
                 }}>
-                  Hackathon 2025 – AI Cognitron Club
+                  Hackathon 2026 – AI Cognitron Club
                 </h2>
 
                 <p style={{ 
@@ -428,12 +428,6 @@ function HomeSection() {
         </div>
       </section>
 
-      <section>
-        <div className="upcoming-events">
-          <h1 className="date">Date: 30/07/2025</h1>
-          <h2 className="top-card">BIS Standard Writing</h2>
-        </div>
-      </section>
     </>
   );
 }
