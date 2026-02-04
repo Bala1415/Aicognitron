@@ -34,10 +34,10 @@ function Team() {
       year: "Faculty"
     },
     {
-      image: "/assets/team/sherlin.jpg",
-      title: "Ms.Sherlin Sherly",
+      image: "/assets/team/ilakaya.jpeg",
+      title: "Ms.Illakiya",
       subtitle: "Staff",
-      handle: "@sherlinsherly",
+      handle: "@she",
       borderColor: "#F59E0B",
       gradient: "linear-gradient(165deg, #F59E0B, #000)",
       url: "https://github.com/",
